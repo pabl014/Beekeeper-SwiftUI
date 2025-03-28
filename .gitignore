@@ -5,6 +5,8 @@
 Beekeeper-SwiftUI/GoogleService-Info.plist
 **/GoogleService-Info.plist
 
+Beekeeper-SwiftUI.xcodeproj/project.xcworkspace/
+Beekeeper-SwiftUI.xcodeproj/xcuserdata/
 
 ## Project-wide
 .DS_Store
