@@ -13,9 +13,12 @@ struct Beekeeper_SwiftUIApp: App {
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    @StateObject var authViewModel = AuthenticationViewModel(authService: AuthenticationService())
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environmentObject(authViewModel)
         }
     }
 }

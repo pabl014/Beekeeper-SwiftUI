@@ -7,20 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60575A2DA9C8A0004DC314 /* SettingsView.swift */; };
+		FE60576A2DAB0F23004DC314 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6057692DAB0F23004DC314 /* AuthenticationError.swift */; };
+		FE60576D2DAB13D2004DC314 /* SignInState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60576C2DAB13D2004DC314 /* SignInState.swift */; };
+		FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE15782DA1C49D00DC4D17 /* RootView.swift */; };
+		FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */; };
 		FEED69C12D96CC7900F7A171 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FEED69C02D96CC7900F7A171 /* FirebaseAnalytics */; };
+		FEED69C42D96E00700F7A171 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FEED69C32D96E00700F7A171 /* FirebaseAuth */; };
+		FEED69D12D96E15E00F7A171 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEED69CC2D96E15E00F7A171 /* AuthenticationView.swift */; };
+		FEED69D22D96E15E00F7A171 /* Beekeeper_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEED69CD2D96E15E00F7A171 /* Beekeeper_SwiftUIApp.swift */; };
+		FEED69D42D96E15E00F7A171 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEED69C92D96E15E00F7A171 /* Preview Assets.xcassets */; };
+		FEED69D52D96E15E00F7A171 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEED69CB2D96E15E00F7A171 /* Assets.xcassets */; };
+		FEED69D62D96E15E00F7A171 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEED69CF2D96E15E00F7A171 /* GoogleService-Info.plist */; };
+		FEED69D82D96E56300F7A171 /* SignInWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEED69D72D96E56300F7A171 /* SignInWithEmailView.swift */; };
+		FEED69E02D96E9AD00F7A171 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEED69DF2D96E9AD00F7A171 /* AuthenticationService.swift */; };
+		FEED69E22D96EB0700F7A171 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEED69E12D96EB0700F7A171 /* AuthenticationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE60575A2DA9C8A0004DC314 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FE6057692DAB0F23004DC314 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
+		FE60576C2DAB13D2004DC314 /* SignInState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInState.swift; sourceTree = "<group>"; };
+		FEDE15782DA1C49D00DC4D17 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailView.swift; sourceTree = "<group>"; };
 		FEED69AC2D96BCBB00F7A171 /* Beekeeper-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beekeeper-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEED69C92D96E15E00F7A171 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FEED69CB2D96E15E00F7A171 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FEED69CC2D96E15E00F7A171 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		FEED69CD2D96E15E00F7A171 /* Beekeeper_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beekeeper_SwiftUIApp.swift; sourceTree = "<group>"; };
+		FEED69CF2D96E15E00F7A171 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FEED69D72D96E56300F7A171 /* SignInWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithEmailView.swift; sourceTree = "<group>"; };
+		FEED69DF2D96E9AD00F7A171 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		FEED69E12D96EB0700F7A171 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		FEED69AE2D96BCBB00F7A171 /* Beekeeper-SwiftUI */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Beekeeper-SwiftUI";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FEED69A92D96BCBB00F7A171 /* Frameworks */ = {
@@ -28,16 +47,46 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEED69C12D96CC7900F7A171 /* FirebaseAnalytics in Frameworks */,
+				FEED69C42D96E00700F7A171 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE6057672DAB0CF5004DC314 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				FEED69E12D96EB0700F7A171 /* AuthenticationViewModel.swift */,
+				FEED69CC2D96E15E00F7A171 /* AuthenticationView.swift */,
+				FEED69D72D96E56300F7A171 /* SignInWithEmailView.swift */,
+				FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		FE60576E2DAB25D5004DC314 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FEED69DF2D96E9AD00F7A171 /* AuthenticationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FE60576F2DAB2C8E004DC314 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FE6057692DAB0F23004DC314 /* AuthenticationError.swift */,
+				FE60576C2DAB13D2004DC314 /* SignInState.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		FEED69A32D96BCBB00F7A171 = {
 			isa = PBXGroup;
 			children = (
-				FEED69AE2D96BCBB00F7A171 /* Beekeeper-SwiftUI */,
+				FEED69D02D96E15E00F7A171 /* Beekeeper-SwiftUI */,
+				FEED69C22D96E00700F7A171 /* Frameworks */,
 				FEED69AD2D96BCBB00F7A171 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +97,37 @@
 				FEED69AC2D96BCBB00F7A171 /* Beekeeper-SwiftUI.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FEED69C22D96E00700F7A171 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FEED69CA2D96E15E00F7A171 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FEED69C92D96E15E00F7A171 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FEED69D02D96E15E00F7A171 /* Beekeeper-SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				FEED69CD2D96E15E00F7A171 /* Beekeeper_SwiftUIApp.swift */,
+				FEDE15782DA1C49D00DC4D17 /* RootView.swift */,
+				FE60576E2DAB25D5004DC314 /* Services */,
+				FE6057672DAB0CF5004DC314 /* Authentication */,
+				FE60575A2DA9C8A0004DC314 /* SettingsView.swift */,
+				FE60576F2DAB2C8E004DC314 /* Utils */,
+				FEED69CA2D96E15E00F7A171 /* Preview Content */,
+				FEED69CB2D96E15E00F7A171 /* Assets.xcassets */,
+				FEED69CF2D96E15E00F7A171 /* GoogleService-Info.plist */,
+			);
+			path = "Beekeeper-SwiftUI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -65,12 +145,10 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				FEED69AE2D96BCBB00F7A171 /* Beekeeper-SwiftUI */,
-			);
 			name = "Beekeeper-SwiftUI";
 			packageProductDependencies = (
 				FEED69C02D96CC7900F7A171 /* FirebaseAnalytics */,
+				FEED69C32D96E00700F7A171 /* FirebaseAuth */,
 			);
 			productName = "Beekeeper-SwiftUI";
 			productReference = FEED69AC2D96BCBB00F7A171 /* Beekeeper-SwiftUI.app */;
@@ -118,6 +196,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEED69D42D96E15E00F7A171 /* Preview Assets.xcassets in Resources */,
+				FEED69D52D96E15E00F7A171 /* Assets.xcassets in Resources */,
+				FEED69D62D96E15E00F7A171 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +209,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */,
+				FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */,
+				FEED69D12D96E15E00F7A171 /* AuthenticationView.swift in Sources */,
+				FEED69D22D96E15E00F7A171 /* Beekeeper_SwiftUIApp.swift in Sources */,
+				FEED69E22D96EB0700F7A171 /* AuthenticationViewModel.swift in Sources */,
+				FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */,
+				FEED69E02D96E9AD00F7A171 /* AuthenticationService.swift in Sources */,
+				FEED69D82D96E56300F7A171 /* SignInWithEmailView.swift in Sources */,
+				FE60576D2DAB13D2004DC314 /* SignInState.swift in Sources */,
+				FE60576A2DAB0F23004DC314 /* AuthenticationError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +441,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FEED69BF2D96CC7900F7A171 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
+		};
+		FEED69C32D96E00700F7A171 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEED69BF2D96CC7900F7A171 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
