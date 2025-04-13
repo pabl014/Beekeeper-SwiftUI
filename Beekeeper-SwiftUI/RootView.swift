@@ -26,7 +26,7 @@ struct RootView: View {
                             Label("another one", systemImage: "heart")
                         }
                     
-                    Text("another view")
+                    Text("apple view")
                         .tabItem {
                             Label("applowskie", systemImage: "macpro.gen3.fill")
                         }

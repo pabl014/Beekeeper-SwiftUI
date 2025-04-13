@@ -10,6 +10,7 @@
 		FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60575A2DA9C8A0004DC314 /* SettingsView.swift */; };
 		FE60576A2DAB0F23004DC314 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6057692DAB0F23004DC314 /* AuthenticationError.swift */; };
 		FE60576D2DAB13D2004DC314 /* SignInState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60576C2DAB13D2004DC314 /* SignInState.swift */; };
+		FE8DB24B2DABCFDE0026530B /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DB24A2DABCFDE0026530B /* String+Ext.swift */; };
 		FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE15782DA1C49D00DC4D17 /* RootView.swift */; };
 		FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */; };
 		FEED69C12D96CC7900F7A171 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FEED69C02D96CC7900F7A171 /* FirebaseAnalytics */; };
@@ -28,6 +29,7 @@
 		FE60575A2DA9C8A0004DC314 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FE6057692DAB0F23004DC314 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		FE60576C2DAB13D2004DC314 /* SignInState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInState.swift; sourceTree = "<group>"; };
+		FE8DB24A2DABCFDE0026530B /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		FEDE15782DA1C49D00DC4D17 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailView.swift; sourceTree = "<group>"; };
 		FEED69AC2D96BCBB00F7A171 /* Beekeeper-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beekeeper-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		FE8DB24C2DABCFF00026530B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FE8DB24A2DABCFDE0026530B /* String+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		FEED69A32D96BCBB00F7A171 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +133,7 @@
 				FE6057672DAB0CF5004DC314 /* Authentication */,
 				FE60575A2DA9C8A0004DC314 /* SettingsView.swift */,
 				FE60576F2DAB2C8E004DC314 /* Utils */,
+				FE8DB24C2DABCFF00026530B /* Extensions */,
 				FEED69CA2D96E15E00F7A171 /* Preview Content */,
 				FEED69CB2D96E15E00F7A171 /* Assets.xcassets */,
 				FEED69CF2D96E15E00F7A171 /* GoogleService-Info.plist */,
@@ -219,6 +230,7 @@
 				FEED69D82D96E56300F7A171 /* SignInWithEmailView.swift in Sources */,
 				FE60576D2DAB13D2004DC314 /* SignInState.swift in Sources */,
 				FE60576A2DAB0F23004DC314 /* AuthenticationError.swift in Sources */,
+				FE8DB24B2DABCFDE0026530B /* String+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

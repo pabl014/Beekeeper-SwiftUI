@@ -13,6 +13,7 @@ struct SignInWithEmailView: View {
     @Binding var showSignInView: Bool
     @State private var email: String = "hello@testing.com"
     @State private var password: String = "qwertyuiop"
+    @FocusState private var isTextFieldFocused: Bool
     
     var body: some View {
         VStack {
@@ -23,6 +24,7 @@ struct SignInWithEmailView: View {
                 .background(.gray.opacity(0.4))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding(.horizontal)
+                .focused($isTextFieldFocused)
             
             SecureField("Password...", text: $password)
                 .padding()
@@ -30,6 +32,7 @@ struct SignInWithEmailView: View {
                 .background(.gray.opacity(0.4))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding(.horizontal)
+                .focused($isTextFieldFocused)
             
             Button {
                 Task {
@@ -63,7 +66,7 @@ struct SignInWithEmailView: View {
                         .padding()
                 }
             }
-            .disabled(email.isEmpty || password.isEmpty)
+            .disabled(email.isEmpty || password.isEmpty || !email.isValidEmail)
             
             NavigationLink {
                 SignUpWithEmailView()
@@ -80,6 +83,13 @@ struct SignInWithEmailView: View {
         }
         .padding(.top)
         .navigationTitle("Sign in with email")
+        .toolbar {
+            if isTextFieldFocused {
+                Button("Done") {
+                    isTextFieldFocused = false
+                }
+            }
+        }
     }
 }
 
