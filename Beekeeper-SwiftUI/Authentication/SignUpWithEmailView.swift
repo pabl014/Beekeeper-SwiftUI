@@ -14,6 +14,7 @@ struct SignUpWithEmailView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    @FocusState private var isTextFieldFocused: Bool
     
     var body: some View {
         
@@ -26,6 +27,7 @@ struct SignUpWithEmailView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding(.horizontal)
                 .keyboardType(.emailAddress)
+                .focused($isTextFieldFocused)
             
             SecureField("Password...", text: $password)
                 .padding()
@@ -33,6 +35,7 @@ struct SignUpWithEmailView: View {
                 .background(.gray.opacity(0.4))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding(.horizontal)
+                .focused($isTextFieldFocused)
             
             SecureField("Repeat Password...", text: $confirmPassword)
                 .padding()
@@ -40,6 +43,7 @@ struct SignUpWithEmailView: View {
                 .background(.gray.opacity(0.4))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding(.horizontal)
+                .focused($isTextFieldFocused)
             
             Button(action: {
                 Task {
@@ -67,6 +71,13 @@ struct SignUpWithEmailView: View {
         }
         .navigationTitle("Sign Up")
         .padding(.top)
+        .toolbar {
+            if isTextFieldFocused {
+                Button("Done") {
+                    isTextFieldFocused = false
+                }
+            }
+        }
     }
 }
 
