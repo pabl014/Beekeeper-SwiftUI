@@ -13,6 +13,19 @@ struct AuthenticationView: View {
     
     var body: some View {
         VStack {
+            
+            VStack {
+                Image("funny-bee")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 300, height: 300)
+                
+                Text("Beekeeper")
+                    .font(.system(size: 60, weight: .bold, design: .rounded))
+            }
+            .padding(.bottom, 40)
+            .offset(y: -60)
+            
             NavigationLink {
                 SignInWithEmailView(showSignInView: $showSignInView)
             } label: {
