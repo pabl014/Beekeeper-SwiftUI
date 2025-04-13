@@ -12,6 +12,7 @@ import FirebaseAuth
 protocol AuthServiceProtocol {
     func signInWithEmail(email: String, password: String) async throws -> User
     func signUpWithEmail(email: String, password: String) async throws -> User
+    func sendPasswordReset(email: String) async throws
     func signOut() async throws
     func getCurrentUser() -> User?
 }
@@ -36,6 +37,14 @@ final class AuthenticationService: AuthServiceProtocol {
             return result.user
         } catch {
             throw AuthError.signUpFailed(description: error.localizedDescription)
+        }
+    }
+    
+    func sendPasswordReset(email: String) async throws {
+        do {
+            try await firebaseAuth.sendPasswordReset(withEmail: email)
+        } catch {
+            throw AuthError.passwordResetFailed(description: error.localizedDescription)
         }
     }
     

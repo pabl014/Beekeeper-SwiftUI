@@ -16,6 +16,8 @@ struct SignUpWithEmailView: View {
     @State private var confirmPassword = ""
     @FocusState private var isTextFieldFocused: Bool
     
+    @State private var showErrorAlert: Bool = false
+    
     var body: some View {
         
         VStack(spacing: 16) {
@@ -51,19 +53,32 @@ struct SignUpWithEmailView: View {
                         try await viewModel.signUpWithEmail(email: email, password: password)
                         dismiss()
                     } catch {
+                        showErrorAlert = true
                         print("nie udalo sie stworzyc usera")
                     }
                 }
-            
+                
             }) {
-                Text("Sign Up")
-                    .font(.headline)
-                    .foregroundStyle(.white)
-                    .frame(height: 55)
-                    .frame(maxWidth: .infinity)
-                    .background(.blue)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding()
+                if viewModel.isLoading { 
+                    ProgressView()
+                        .tint(.white)
+                        .font(.headline)
+                        .foregroundStyle(.white)
+                        .frame(height: 55)
+                        .frame(maxWidth: .infinity)
+                        .background(.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
+                } else {
+                    Text("Sign Up")
+                        .font(.headline)
+                        .foregroundStyle(.white)
+                        .frame(height: 55)
+                        .frame(maxWidth: .infinity)
+                        .background(.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
+                }
             }
             .disabled(email.isEmpty || password.isEmpty || confirmPassword.isEmpty || password != confirmPassword)
             
@@ -78,11 +93,22 @@ struct SignUpWithEmailView: View {
                 }
             }
         }
+        .alert("Error", isPresented: $showErrorAlert) {
+            Button("OK") {
+                showErrorAlert = false
+            }
+        } message: {
+            Text(viewModel.error?.localizedDescription ?? "An unknown error occurred")
+        }
     }
 }
 
 #Preview {
     NavigationStack {
         SignUpWithEmailView()
+            .environmentObject( AuthenticationViewModel(
+                                    authService: AuthenticationService()
+                                )
+            )
     }
 }

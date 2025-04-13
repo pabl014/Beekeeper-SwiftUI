@@ -13,15 +13,23 @@ struct SettingsView: View {
     @Binding var showSignInView: Bool
     
     var body: some View {
-        Button("Log out") {
-            Task {
-                await viewModel.signOut()
-                showSignInView = true 
+        List {
+            Button("Log out") {
+                Task {
+                    await viewModel.signOut()
+                    showSignInView = true
+                }
             }
+            
+            Text(viewModel.currentUser?.email ?? "No user logged in")
         }
     }
 }
 
 #Preview {
     SettingsView(showSignInView: .constant(false))
+        .environmentObject( AuthenticationViewModel(
+                                authService: AuthenticationService()
+                            )
+        )
 }

@@ -51,5 +51,9 @@ struct AuthenticationView: View {
 #Preview {
     NavigationStack {
         AuthenticationView(showSignInView: .constant(false))
+            .environmentObject( AuthenticationViewModel(
+                                    authService: AuthenticationService()
+                                )
+            )
     }
 }

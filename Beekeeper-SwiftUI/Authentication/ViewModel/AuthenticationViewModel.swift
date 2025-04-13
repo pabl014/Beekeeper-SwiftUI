@@ -34,19 +34,46 @@ final class AuthenticationViewModel: ObservableObject {
         
         do {
             self.currentUser = try await authService.signInWithEmail(email: email, password: password)
-        }
-        catch let authError as AuthError {
+        } catch let authError as AuthError {
             self.error = authError
+            throw authError
         } catch {
             self.error = .signInFailed(description: error.localizedDescription)
+            throw error
         }
        
         self.state = .signedIn
     }
     
     func signUpWithEmail(email: String, password: String) async throws {
-        self.currentUser = try await authService.signUpWithEmail(email: email, password: password)
-        self.state = .signedIn
+        
+        isLoading = true
+        error = nil
+        defer { isLoading = false }
+        
+        do {
+            self.currentUser = try await authService.signUpWithEmail(email: email, password: password)
+        } catch let authError as AuthError {
+            self.error = authError
+            throw authError
+        } catch {
+            self.error = .signInFailed(description: error.localizedDescription)
+            throw error
+        }
+    }
+    
+    func sendPasswordReset(email: String) async {
+        
+        isLoading = true
+        error = nil
+        
+        do {
+            try await authService.sendPasswordReset(email: email)
+        } catch {
+            self.error = error as? AuthError ?? .passwordResetFailed(description: error.localizedDescription)
+        }
+        
+        isLoading = false
     }
     
     func checkIfUserIsSignedIn() {

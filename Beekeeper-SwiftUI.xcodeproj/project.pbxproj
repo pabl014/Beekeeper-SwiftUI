@@ -12,6 +12,7 @@
 		FE60576D2DAB13D2004DC314 /* SignInState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60576C2DAB13D2004DC314 /* SignInState.swift */; };
 		FE8DB24B2DABCFDE0026530B /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DB24A2DABCFDE0026530B /* String+Ext.swift */; };
 		FE8DB2502DABD4CB0026530B /* AnimatedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DB24F2DABD4CB0026530B /* AnimatedText.swift */; };
+		FE8DB2522DABDEF60026530B /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DB2512DABDEF60026530B /* ForgotPasswordView.swift */; };
 		FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE15782DA1C49D00DC4D17 /* RootView.swift */; };
 		FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */; };
 		FEED69C12D96CC7900F7A171 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FEED69C02D96CC7900F7A171 /* FirebaseAnalytics */; };
@@ -32,6 +33,7 @@
 		FE60576C2DAB13D2004DC314 /* SignInState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInState.swift; sourceTree = "<group>"; };
 		FE8DB24A2DABCFDE0026530B /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		FE8DB24F2DABD4CB0026530B /* AnimatedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedText.swift; sourceTree = "<group>"; };
+		FE8DB2512DABDEF60026530B /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		FEDE15782DA1C49D00DC4D17 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailView.swift; sourceTree = "<group>"; };
 		FEED69AC2D96BCBB00F7A171 /* Beekeeper-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beekeeper-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,10 +63,8 @@
 		FE6057672DAB0CF5004DC314 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				FEED69E12D96EB0700F7A171 /* AuthenticationViewModel.swift */,
-				FEED69CC2D96E15E00F7A171 /* AuthenticationView.swift */,
-				FEED69D72D96E56300F7A171 /* SignInWithEmailView.swift */,
-				FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */,
+				FE8DB2532DABE2C40026530B /* ViewModel */,
+				FE8DB2542DABE2CD0026530B /* Views */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -93,6 +93,25 @@
 				FE8DB24A2DABCFDE0026530B /* String+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FE8DB2532DABE2C40026530B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FEED69E12D96EB0700F7A171 /* AuthenticationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FE8DB2542DABE2CD0026530B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FEED69CC2D96E15E00F7A171 /* AuthenticationView.swift */,
+				FEED69D72D96E56300F7A171 /* SignInWithEmailView.swift */,
+				FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */,
+				FE8DB2512DABDEF60026530B /* ForgotPasswordView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FEED69A32D96BCBB00F7A171 = {
@@ -231,6 +250,7 @@
 				FEED69E22D96EB0700F7A171 /* AuthenticationViewModel.swift in Sources */,
 				FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */,
 				FEED69E02D96E9AD00F7A171 /* AuthenticationService.swift in Sources */,
+				FE8DB2522DABDEF60026530B /* ForgotPasswordView.swift in Sources */,
 				FEED69D82D96E56300F7A171 /* SignInWithEmailView.swift in Sources */,
 				FE60576D2DAB13D2004DC314 /* SignInState.swift in Sources */,
 				FE60576A2DAB0F23004DC314 /* AuthenticationError.swift in Sources */,
