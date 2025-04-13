@@ -41,14 +41,27 @@ struct SignInWithEmailView: View {
                     }
                 }
             } label: {
-                Text("Sign in")
-                    .font(.headline)
-                    .foregroundStyle(.white)
-                    .frame(height: 55)
-                    .frame(maxWidth: .infinity)
-                    .background(.blue)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding()
+                
+                if viewModel.isLoading {
+                    ProgressView()
+                        .tint(.white)
+                        .font(.headline)
+                        .foregroundStyle(.white)
+                        .frame(height: 55)
+                        .frame(maxWidth: .infinity)
+                        .background(.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
+                } else {
+                    Text("Sign in")
+                        .font(.headline)
+                        .foregroundStyle(.white)
+                        .frame(height: 55)
+                        .frame(maxWidth: .infinity)
+                        .background(.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
+                }
             }
             .disabled(email.isEmpty || password.isEmpty)
             

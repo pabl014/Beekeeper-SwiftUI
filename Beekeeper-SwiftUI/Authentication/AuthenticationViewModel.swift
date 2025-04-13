@@ -14,6 +14,7 @@ final class AuthenticationViewModel: ObservableObject {
     @Published var currentUser: User?
     @Published var state: SignInState = .signedOut
     @Published var error: AuthError?
+    @Published var isLoading: Bool = false
     
     // Dependencies
     private let authService: AuthServiceProtocol
@@ -26,7 +27,20 @@ final class AuthenticationViewModel: ObservableObject {
     
     
     func signInWithEmail(email: String, password: String) async throws {
-        self.currentUser = try await authService.signInWithEmail(email: email, password: password)
+        
+        isLoading = true
+        error = nil
+        defer { isLoading = false }
+        
+        do {
+            self.currentUser = try await authService.signInWithEmail(email: email, password: password)
+        }
+        catch let authError as AuthError {
+            self.error = authError
+        } catch {
+            self.error = .signInFailed(description: error.localizedDescription)
+        }
+       
         self.state = .signedIn
     }
     
