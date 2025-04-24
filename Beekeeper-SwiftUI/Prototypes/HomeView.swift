@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         VStack {
-            
+            Text("HomeView")
         }
     }
 }
@@ -20,5 +20,4 @@ struct HomeView: View {
         BeeYardCardView(imageName: "bee-yard")
         BeeYardCardView(imageName: "bee-yard2")
     }
-    
 }

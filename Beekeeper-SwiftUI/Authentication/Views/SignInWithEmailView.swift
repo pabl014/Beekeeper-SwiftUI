@@ -42,6 +42,7 @@ struct SignInWithEmailView: View {
                 } label : {
                     Text("I forgot my password")
                         .font(.system(size: 14))
+                        .foregroundStyle(.orange)
                 }
                 
                 Spacer(minLength: 0)
@@ -69,7 +70,7 @@ struct SignInWithEmailView: View {
                         .foregroundStyle(.white)
                         .frame(height: 55)
                         .frame(maxWidth: .infinity)
-                        .background(.blue)
+                        .background(.orange)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .padding()
                 } else {
@@ -78,7 +79,7 @@ struct SignInWithEmailView: View {
                         .foregroundStyle(.white)
                         .frame(height: 55)
                         .frame(maxWidth: .infinity)
-                        .background(.blue)
+                        .background(.orange)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .padding()
                 }
@@ -94,6 +95,7 @@ struct SignInWithEmailView: View {
                         .fontWeight(.bold)
                 }
                 .font(.system(size: 14))
+                .foregroundStyle(.orange)
             }
             
             Spacer(minLength: 0)

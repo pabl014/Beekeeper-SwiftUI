@@ -15,22 +15,7 @@ struct RootView: View {
     var body: some View {
         ZStack {
             if !showSignInView {
-                TabView {
-                    SettingsView(showSignInView: $showSignInView)
-                        .tabItem {
-                            Label("Settings", systemImage: "gear")
-                        }
-                    
-                    Text("another view")
-                        .tabItem {
-                            Label("another one", systemImage: "heart")
-                        }
-                    
-                    Text("apple view")
-                        .tabItem {
-                            Label("applowskie", systemImage: "macpro.gen3.fill")
-                        }
-                }
+                TabBarView(showSignInView: $showSignInView)
             }
         }
         .onAppear {

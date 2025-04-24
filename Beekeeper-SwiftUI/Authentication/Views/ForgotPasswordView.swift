@@ -50,7 +50,7 @@ struct ForgotPasswordView: View {
                         .foregroundStyle(.white)
                         .frame(height: 55)
                         .frame(maxWidth: .infinity)
-                        .background(.blue)
+                        .background(.orange)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .padding()
                 } else {
@@ -59,7 +59,7 @@ struct ForgotPasswordView: View {
                         .foregroundStyle(.white)
                         .frame(height: 55)
                         .frame(maxWidth: .infinity)
-                        .background(.blue)
+                        .background(.orange)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .padding()
                 }
