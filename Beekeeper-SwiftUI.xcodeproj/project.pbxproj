@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE50AB702DBA86D000CD6E72 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB6F2DBA86D000CD6E72 /* HomeView.swift */; };
+		FE50AB722DBA86E400CD6E72 /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB712DBA86E400CD6E72 /* ToDoView.swift */; };
+		FE50AB742DBA86FD00CD6E72 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB732DBA86FD00CD6E72 /* ExpensesView.swift */; };
+		FE50AB7C2DBAA41900CD6E72 /* BeeYardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB7B2DBAA41900CD6E72 /* BeeYardCardView.swift */; };
 		FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60575A2DA9C8A0004DC314 /* SettingsView.swift */; };
 		FE60576A2DAB0F23004DC314 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6057692DAB0F23004DC314 /* AuthenticationError.swift */; };
 		FE60576D2DAB13D2004DC314 /* SignInState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60576C2DAB13D2004DC314 /* SignInState.swift */; };
@@ -28,6 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE50AB6F2DBA86D000CD6E72 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FE50AB712DBA86E400CD6E72 /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
+		FE50AB732DBA86FD00CD6E72 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
+		FE50AB7B2DBAA41900CD6E72 /* BeeYardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeYardCardView.swift; sourceTree = "<group>"; };
 		FE60575A2DA9C8A0004DC314 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FE6057692DAB0F23004DC314 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		FE60576C2DAB13D2004DC314 /* SignInState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInState.swift; sourceTree = "<group>"; };
@@ -60,6 +68,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE50AB6E2DBA864500CD6E72 /* Prototypes */ = {
+			isa = PBXGroup;
+			children = (
+				FE50AB6F2DBA86D000CD6E72 /* HomeView.swift */,
+				FE50AB7B2DBAA41900CD6E72 /* BeeYardCardView.swift */,
+				FE50AB712DBA86E400CD6E72 /* ToDoView.swift */,
+				FE50AB732DBA86FD00CD6E72 /* ExpensesView.swift */,
+			);
+			path = Prototypes;
+			sourceTree = "<group>";
+		};
 		FE6057672DAB0CF5004DC314 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +175,7 @@
 				FE60575A2DA9C8A0004DC314 /* SettingsView.swift */,
 				FE60576F2DAB2C8E004DC314 /* Utils */,
 				FE8DB24C2DABCFF00026530B /* Extensions */,
+				FE50AB6E2DBA864500CD6E72 /* Prototypes */,
 				FEED69CA2D96E15E00F7A171 /* Preview Content */,
 				FEED69CB2D96E15E00F7A171 /* Assets.xcassets */,
 				FEED69CF2D96E15E00F7A171 /* GoogleService-Info.plist */,
@@ -243,11 +263,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */,
+				FE50AB702DBA86D000CD6E72 /* HomeView.swift in Sources */,
 				FE8DB2502DABD4CB0026530B /* AnimatedText.swift in Sources */,
+				FE50AB742DBA86FD00CD6E72 /* ExpensesView.swift in Sources */,
 				FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */,
+				FE50AB722DBA86E400CD6E72 /* ToDoView.swift in Sources */,
 				FEED69D12D96E15E00F7A171 /* AuthenticationView.swift in Sources */,
 				FEED69D22D96E15E00F7A171 /* Beekeeper_SwiftUIApp.swift in Sources */,
 				FEED69E22D96EB0700F7A171 /* AuthenticationViewModel.swift in Sources */,
+				FE50AB7C2DBAA41900CD6E72 /* BeeYardCardView.swift in Sources */,
 				FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */,
 				FEED69E02D96E9AD00F7A171 /* AuthenticationService.swift in Sources */,
 				FE8DB2522DABDEF60026530B /* ForgotPasswordView.swift in Sources */,
