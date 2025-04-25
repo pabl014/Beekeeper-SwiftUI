@@ -13,6 +13,7 @@
 		FE50AB7C2DBAA41900CD6E72 /* BeeYardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB7B2DBAA41900CD6E72 /* BeeYardCardView.swift */; };
 		FE50AB7E2DBAA80500CD6E72 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB7D2DBAA80500CD6E72 /* View+Ext.swift */; };
 		FE50AB812DBAAC2800CD6E72 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB802DBAAC2800CD6E72 /* TabBarView.swift */; };
+		FE50AB852DBBA84F00CD6E72 /* AuthDataResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB842DBBA84F00CD6E72 /* AuthDataResultModel.swift */; };
 		FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60575A2DA9C8A0004DC314 /* SettingsView.swift */; };
 		FE60576A2DAB0F23004DC314 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6057692DAB0F23004DC314 /* AuthenticationError.swift */; };
 		FE60576D2DAB13D2004DC314 /* SignInState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60576C2DAB13D2004DC314 /* SignInState.swift */; };
@@ -40,6 +41,7 @@
 		FE50AB7B2DBAA41900CD6E72 /* BeeYardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeYardCardView.swift; sourceTree = "<group>"; };
 		FE50AB7D2DBAA80500CD6E72 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		FE50AB802DBAAC2800CD6E72 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		FE50AB842DBBA84F00CD6E72 /* AuthDataResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataResultModel.swift; sourceTree = "<group>"; };
 		FE60575A2DA9C8A0004DC314 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FE6057692DAB0F23004DC314 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		FE60576C2DAB13D2004DC314 /* SignInState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInState.swift; sourceTree = "<group>"; };
@@ -86,9 +88,25 @@
 		FE50AB7F2DBAABFE00CD6E72 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				FE50AB802DBAAC2800CD6E72 /* TabBarView.swift */,
+				FE50AB822DBBA7BB00CD6E72 /* TabBar */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		FE50AB822DBBA7BB00CD6E72 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				FE50AB802DBAAC2800CD6E72 /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		FE50AB832DBBA83500CD6E72 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FE50AB842DBBA84F00CD6E72 /* AuthDataResultModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FE6057672DAB0CF5004DC314 /* Authentication */ = {
@@ -183,13 +201,14 @@
 			children = (
 				FEED69CD2D96E15E00F7A171 /* Beekeeper_SwiftUIApp.swift */,
 				FEDE15782DA1C49D00DC4D17 /* RootView.swift */,
+				FE50AB832DBBA83500CD6E72 /* Models */,
 				FE60576E2DAB25D5004DC314 /* Services */,
 				FE6057672DAB0CF5004DC314 /* Authentication */,
 				FE50AB7F2DBAABFE00CD6E72 /* Main */,
 				FE60575A2DA9C8A0004DC314 /* SettingsView.swift */,
+				FE50AB6E2DBA864500CD6E72 /* Prototypes */,
 				FE60576F2DAB2C8E004DC314 /* Utils */,
 				FE8DB24C2DABCFF00026530B /* Extensions */,
-				FE50AB6E2DBA864500CD6E72 /* Prototypes */,
 				FEED69CA2D96E15E00F7A171 /* Preview Content */,
 				FEED69CB2D96E15E00F7A171 /* Assets.xcassets */,
 				FEED69CF2D96E15E00F7A171 /* GoogleService-Info.plist */,
@@ -280,6 +299,7 @@
 				FE50AB702DBA86D000CD6E72 /* HomeView.swift in Sources */,
 				FE50AB7E2DBAA80500CD6E72 /* View+Ext.swift in Sources */,
 				FE8DB2502DABD4CB0026530B /* AnimatedText.swift in Sources */,
+				FE50AB852DBBA84F00CD6E72 /* AuthDataResultModel.swift in Sources */,
 				FE50AB742DBA86FD00CD6E72 /* ExpensesView.swift in Sources */,
 				FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */,
 				FE50AB812DBAAC2800CD6E72 /* TabBarView.swift in Sources */,

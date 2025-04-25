@@ -11,7 +11,7 @@ import FirebaseAuth
 @MainActor
 final class AuthenticationViewModel: ObservableObject {
     
-    @Published var currentUser: User?
+    @Published var currentUser: AuthDataResultModel?
     @Published var state: SignInState = .signedOut
     @Published var error: AuthError?
     @Published var isLoading: Bool = false

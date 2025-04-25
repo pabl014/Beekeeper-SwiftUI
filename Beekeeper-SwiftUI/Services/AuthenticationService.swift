@@ -10,11 +10,11 @@ import FirebaseAuth
 
 
 protocol AuthServiceProtocol {
-    func signInWithEmail(email: String, password: String) async throws -> User
-    func signUpWithEmail(email: String, password: String) async throws -> User
+    func signInWithEmail(email: String, password: String) async throws -> AuthDataResultModel
+    func signUpWithEmail(email: String, password: String) async throws -> AuthDataResultModel
     func sendPasswordReset(email: String) async throws
     func signOut() async throws
-    func getCurrentUser() -> User?
+    func getCurrentUser() -> AuthDataResultModel?
 }
 
 
@@ -22,19 +22,19 @@ final class AuthenticationService: AuthServiceProtocol {
     
     private let firebaseAuth = Auth.auth()
     
-    func signInWithEmail(email: String, password: String) async throws -> User {
+    func signInWithEmail(email: String, password: String) async throws -> AuthDataResultModel {
         do {
             let result = try await firebaseAuth.signIn(withEmail: email, password: password)
-            return result.user
+            return AuthDataResultModel(user: result.user)
         } catch {
             throw AuthError.signInFailed(description: error.localizedDescription)
         }
     }
     
-    func signUpWithEmail(email: String, password: String) async throws -> User {
+    func signUpWithEmail(email: String, password: String) async throws -> AuthDataResultModel {
         do {
             let result = try await firebaseAuth.createUser(withEmail: email, password: password)
-            return result.user
+            return AuthDataResultModel(user: result.user)
         } catch {
             throw AuthError.signUpFailed(description: error.localizedDescription)
         }
@@ -56,8 +56,13 @@ final class AuthenticationService: AuthServiceProtocol {
         }
     }
     
-    func getCurrentUser() -> User? {
-        return firebaseAuth.currentUser
+    func getCurrentUser() -> AuthDataResultModel? {
+        
+        guard let currentUser = firebaseAuth.currentUser else {
+            return nil
+        }
+        
+        return AuthDataResultModel(user: currentUser)
     }
     
 }
