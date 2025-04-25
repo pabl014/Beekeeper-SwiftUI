@@ -22,6 +22,7 @@ struct SettingsView: View {
             }
             
             Text(viewModel.currentUser?.email ?? "No user logged in")
+            Text(viewModel.currentUser?.displayName ?? "no nickname")
         }
     }
 }

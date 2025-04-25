@@ -7,6 +7,8 @@
 
 import Foundation
 import FirebaseAuth
+import GoogleSignIn
+import GoogleSignInSwift
 
 @MainActor
 final class AuthenticationViewModel: ObservableObject {
@@ -89,6 +91,7 @@ final class AuthenticationViewModel: ObservableObject {
     func signOut() async {
         do {
             try await authService.signOut()
+            GIDSignIn.sharedInstance.signOut()
             self.state = .signedOut
             self.currentUser = nil
         } catch {
@@ -97,5 +100,7 @@ final class AuthenticationViewModel: ObservableObject {
         
     }
     
-    
+    func signInWithGoogle() async throws {
+        self.currentUser = try await authService.signInWithGoogle()
+    }
 }

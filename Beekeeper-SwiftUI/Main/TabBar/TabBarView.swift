@@ -27,7 +27,7 @@ struct TabBarView: View {
             }
             .tabItem {
                 Image(systemName: "list.star")
-                Text("To-Do")
+                Text("Tasks")
             }
             
             NavigationStack {

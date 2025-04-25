@@ -6,9 +6,14 @@
 //
 
 import SwiftUI
+import GoogleSignIn
+import GoogleSignInSwift
+
+import AuthenticationServices
 
 struct AuthenticationView: View {
     
+    @EnvironmentObject var viewModel: AuthenticationViewModel
     @Binding var showSignInView: Bool
     
     var body: some View {
@@ -24,7 +29,6 @@ struct AuthenticationView: View {
                     .font(.system(size: 60, weight: .bold, design: .rounded))
             }
             .padding(.bottom, 40)
-            .offset(y: -60)
             
             NavigationLink {
                 SignInWithEmailView(showSignInView: $showSignInView)
@@ -37,11 +41,30 @@ struct AuthenticationView: View {
                 }
                 .font(.headline)
                 .foregroundStyle(.white)
-                .frame(height: 55)
+                .frame(height: 45)
                 .frame(maxWidth: .infinity)
                 .background(.orange)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             }
+            
+            GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .wide,state: .normal)) {
+                Task {
+                    do {
+                        try await viewModel.signInWithGoogle()
+                        showSignInView = false
+                    } catch {
+                        print("Błąd logowania przez Google:", error.localizedDescription)
+                        //  viewModel.error = ...
+                    }
+                }
+            }
+            
+            SignInWithAppleButton { request in
+                
+            } onCompletion: { result in
+                
+            }
+            .frame(height: 45)
         }
         .padding()
         .navigationTitle(Text("Sign In"))
