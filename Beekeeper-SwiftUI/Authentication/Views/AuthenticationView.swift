@@ -67,7 +67,6 @@ struct AuthenticationView: View {
             .frame(height: 45)
         }
         .padding()
-        .navigationTitle(Text("Sign In"))
     }
 }
 

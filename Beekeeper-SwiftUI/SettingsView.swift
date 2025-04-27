@@ -21,8 +21,15 @@ struct SettingsView: View {
                 }
             }
             
-            Text(viewModel.currentUser?.email ?? "No user logged in")
-            Text(viewModel.currentUser?.displayName ?? "no nickname")
+            Text(viewModel.authDataResult?.email ?? "No user logged in")
+            Text(viewModel.authDataResult?.displayName ?? "no nickname")
+            Text("db user id: \(viewModel.dbUser?.userId ?? "no id db")")
+            Text("dbuser email: \(viewModel.dbUser?.email ?? "no email db")")
+        }
+        .onAppear {
+            Task {
+                try? await viewModel.loadCurrentUser()
+            }
         }
     }
 }

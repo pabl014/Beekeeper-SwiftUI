@@ -13,17 +13,20 @@ import GoogleSignInSwift
 @MainActor
 final class AuthenticationViewModel: ObservableObject {
     
-    @Published var currentUser: AuthDataResultModel?
+    @Published var authDataResult: AuthDataResultModel?
+    @Published private(set) var dbUser: DBUser? = nil
     @Published var state: SignInState = .signedOut
     @Published var error: AuthError?
     @Published var isLoading: Bool = false
     
     // Dependencies
     private let authService: AuthServiceProtocol
+    private let userService: UserServiceProtocol
     
     // Initializer with dependency injection
-    init(authService: AuthServiceProtocol = AuthenticationService()) {
+    init(authService: AuthServiceProtocol = AuthenticationService(), userService: UserServiceProtocol = UserService() ){
         self.authService = authService
+        self.userService = userService
         checkIfUserIsSignedIn()
     }
     
@@ -35,7 +38,7 @@ final class AuthenticationViewModel: ObservableObject {
         defer { isLoading = false }
         
         do {
-            self.currentUser = try await authService.signInWithEmail(email: email, password: password)
+            self.authDataResult = try await authService.signInWithEmail(email: email, password: password)
         } catch let authError as AuthError {
             self.error = authError
             throw authError
@@ -54,13 +57,24 @@ final class AuthenticationViewModel: ObservableObject {
         defer { isLoading = false }
         
         do {
-            self.currentUser = try await authService.signUpWithEmail(email: email, password: password)
+            self.authDataResult = try await authService.signUpWithEmail(email: email, password: password)
+            if let authDataResult {
+                let user = DBUser(auth: authDataResult)
+                try await userService.createNewUser(user: user)
+            }
         } catch let authError as AuthError {
             self.error = authError
             throw authError
         } catch {
             self.error = .signInFailed(description: error.localizedDescription)
             throw error
+        }
+    }
+    
+    func loadCurrentUser() async throws {
+        let authDataResult = authService.getCurrentUser()
+        if let authDataResult {
+            self.dbUser = try await userService.getUser(userId: authDataResult.uid)
         }
     }
     
@@ -79,9 +93,9 @@ final class AuthenticationViewModel: ObservableObject {
     }
     
     func checkIfUserIsSignedIn() {
-        self.currentUser = authService.getCurrentUser()
+        self.authDataResult = authService.getCurrentUser()
         
-        if currentUser != nil {
+        if authDataResult != nil {
             self.state = .signedIn
         } else {
             self.state = .signedOut
@@ -93,7 +107,7 @@ final class AuthenticationViewModel: ObservableObject {
             try await authService.signOut()
             GIDSignIn.sharedInstance.signOut()
             self.state = .signedOut
-            self.currentUser = nil
+            self.authDataResult = nil
         } catch {
             self.error = error as? AuthError ?? .signInFailed(description: error.localizedDescription)
         }
@@ -101,6 +115,6 @@ final class AuthenticationViewModel: ObservableObject {
     }
     
     func signInWithGoogle() async throws {
-        self.currentUser = try await authService.signInWithGoogle()
+        self.authDataResult = try await authService.signInWithGoogle()
     }
 }

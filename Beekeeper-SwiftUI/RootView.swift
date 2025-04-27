@@ -19,7 +19,7 @@ struct RootView: View {
             }
         }
         .onAppear {
-            self.showSignInView = viewModel.currentUser == nil || viewModel.state == .signedOut
+            self.showSignInView = viewModel.authDataResult == nil || viewModel.state == .signedOut
         }
         .fullScreenCover(isPresented: $showSignInView) {
             NavigationStack {
