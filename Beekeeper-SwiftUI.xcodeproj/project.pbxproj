@@ -22,6 +22,9 @@
 		FE50AB972DBD3F7300CD6E72 /* TestView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB962DBD3F7300CD6E72 /* TestView1.swift */; };
 		FE50AB992DBD3F8700CD6E72 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB982DBD3F8700CD6E72 /* TestViewModel.swift */; };
 		FE50AB9E2DBD6ABD00CD6E72 /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB9D2DBD6AB900CD6E72 /* DBUser.swift */; };
+		FE50ABA32DBE889300CD6E72 /* BeeTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50ABA22DBE888800CD6E72 /* BeeTask.swift */; };
+		FE50ABA62DBE890500CD6E72 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50ABA52DBE890500CD6E72 /* TaskView.swift */; };
+		FE50ABAE2DBEE9DB00CD6E72 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50ABAD2DBEE9DB00CD6E72 /* EditProfileView.swift */; };
 		FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60575A2DA9C8A0004DC314 /* SettingsView.swift */; };
 		FE60576A2DAB0F23004DC314 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6057692DAB0F23004DC314 /* AuthenticationError.swift */; };
 		FE60576D2DAB13D2004DC314 /* SignInState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60576C2DAB13D2004DC314 /* SignInState.swift */; };
@@ -56,6 +59,9 @@
 		FE50AB962DBD3F7300CD6E72 /* TestView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView1.swift; sourceTree = "<group>"; };
 		FE50AB982DBD3F8700CD6E72 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		FE50AB9D2DBD6AB900CD6E72 /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
+		FE50ABA22DBE888800CD6E72 /* BeeTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeTask.swift; sourceTree = "<group>"; };
+		FE50ABA52DBE890500CD6E72 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		FE50ABAD2DBEE9DB00CD6E72 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		FE60575A2DA9C8A0004DC314 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FE6057692DAB0F23004DC314 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		FE60576C2DAB13D2004DC314 /* SignInState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInState.swift; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 		FE50AB832DBBA83500CD6E72 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FE50ABA12DBE887D00CD6E72 /* PrototypeModels */,
 				FE50AB9D2DBD6AB900CD6E72 /* DBUser.swift */,
 				FE50AB842DBBA84F00CD6E72 /* AuthDataResultModel.swift */,
 				FE50AB8C2DBBF6A200CD6E72 /* AuthProviderOption.swift */,
@@ -150,9 +157,26 @@
 		FE50AB9C2DBD3FC800CD6E72 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FE50ABA42DBE88F600CD6E72 /* Task */,
 				FE50AB962DBD3F7300CD6E72 /* TestView1.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FE50ABA12DBE887D00CD6E72 /* PrototypeModels */ = {
+			isa = PBXGroup;
+			children = (
+				FE50ABA22DBE888800CD6E72 /* BeeTask.swift */,
+			);
+			path = PrototypeModels;
+			sourceTree = "<group>";
+		};
+		FE50ABA42DBE88F600CD6E72 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				FE50ABA52DBE890500CD6E72 /* TaskView.swift */,
+			);
+			path = Task;
 			sourceTree = "<group>";
 		};
 		FE6057672DAB0CF5004DC314 /* Authentication */ = {
@@ -253,6 +277,7 @@
 				FE6057672DAB0CF5004DC314 /* Authentication */,
 				FE50AB7F2DBAABFE00CD6E72 /* Main */,
 				FE60575A2DA9C8A0004DC314 /* SettingsView.swift */,
+				FE50ABAD2DBEE9DB00CD6E72 /* EditProfileView.swift */,
 				FE50AB6E2DBA864500CD6E72 /* Prototypes */,
 				FE60576F2DAB2C8E004DC314 /* Utils */,
 				FE8DB24C2DABCFF00026530B /* Extensions */,
@@ -346,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE50ABA62DBE890500CD6E72 /* TaskView.swift in Sources */,
 				FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */,
 				FE50AB702DBA86D000CD6E72 /* HomeView.swift in Sources */,
 				FE50AB7E2DBAA80500CD6E72 /* View+Ext.swift in Sources */,
@@ -354,10 +380,12 @@
 				FE50AB852DBBA84F00CD6E72 /* AuthDataResultModel.swift in Sources */,
 				FE50AB972DBD3F7300CD6E72 /* TestView1.swift in Sources */,
 				FE50AB742DBA86FD00CD6E72 /* ExpensesView.swift in Sources */,
+				FE50ABA32DBE889300CD6E72 /* BeeTask.swift in Sources */,
 				FE50AB952DBC41C300CD6E72 /* UserService.swift in Sources */,
 				FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */,
 				FE50AB812DBAAC2800CD6E72 /* TabBarView.swift in Sources */,
 				FE50AB722DBA86E400CD6E72 /* ToDoView.swift in Sources */,
+				FE50ABAE2DBEE9DB00CD6E72 /* EditProfileView.swift in Sources */,
 				FE50AB8D2DBBF6A200CD6E72 /* AuthProviderOption.swift in Sources */,
 				FEED69D12D96E15E00F7A171 /* AuthenticationView.swift in Sources */,
 				FEED69D22D96E15E00F7A171 /* Beekeeper_SwiftUIApp.swift in Sources */,

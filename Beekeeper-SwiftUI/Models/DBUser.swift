@@ -18,7 +18,7 @@ struct DBUser: Codable {
     init(auth: AuthDataResultModel) {
         self.userId = auth.uid
         self.email = auth.email
-        self.displayName = auth.displayName
+        self.displayName = auth.displayName ?? auth.email?.components(separatedBy: "@").first
         self.photoURL = auth.photoURL
         self.dateCreated = Date()
         self.yardsCount = 0
