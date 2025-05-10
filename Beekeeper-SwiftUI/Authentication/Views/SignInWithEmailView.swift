@@ -11,8 +11,8 @@ struct SignInWithEmailView: View {
     
     @EnvironmentObject var viewModel: AuthenticationViewModel
     @Binding var showSignInView: Bool
-    @State private var email: String = "hello@testing.com"
-    @State private var password: String = ""
+    @State private var email: String = "miguel@test.com"
+    @State private var password: String = "qwertyuiop"
     @FocusState private var isTextFieldFocused: Bool
     
     @State private var showErrorAlert: Bool = false

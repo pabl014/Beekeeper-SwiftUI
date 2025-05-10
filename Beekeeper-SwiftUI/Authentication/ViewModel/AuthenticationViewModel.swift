@@ -105,9 +105,13 @@ final class AuthenticationViewModel: ObservableObject {
     func signOut() async {
         do {
             try await authService.signOut()
-            GIDSignIn.sharedInstance.signOut()
+            if GIDSignIn.sharedInstance.hasPreviousSignIn() {
+                GIDSignIn.sharedInstance.signOut()
+            }
+            //GIDSignIn.sharedInstance.signOut()
             self.state = .signedOut
             self.authDataResult = nil
+            self.dbUser = nil
         } catch {
             self.error = error as? AuthError ?? .signInFailed(description: error.localizedDescription)
         }
