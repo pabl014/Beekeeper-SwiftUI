@@ -34,4 +34,7 @@ struct TestView1: View {
 
 #Preview {
     TestView1()
+        .environmentObject(
+            TestViewModel(userService: UserService(), authService: AuthenticationService())
+        )
 }

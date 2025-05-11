@@ -88,7 +88,7 @@ struct TaskCellView: View {
         }
         .padding()
         .background(task.isCompleted ? Color.green.opacity(0.3) : Color.orange.opacity(0.3))
-        .cornerRadius(12)
+        .cornerRadius(20)
         .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: 2)
         //.padding(.horizontal)
     }

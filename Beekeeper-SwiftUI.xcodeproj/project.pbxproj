@@ -28,6 +28,9 @@
 		FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60575A2DA9C8A0004DC314 /* SettingsView.swift */; };
 		FE60576A2DAB0F23004DC314 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6057692DAB0F23004DC314 /* AuthenticationError.swift */; };
 		FE60576D2DAB13D2004DC314 /* SignInState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60576C2DAB13D2004DC314 /* SignInState.swift */; };
+		FE68B7E92DCFE3720073A521 /* TestExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE68B7E82DCFE3720073A521 /* TestExpenseView.swift */; };
+		FE68B7F12DD0B36A0073A521 /* TestHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE68B7F02DD0B36A0073A521 /* TestHomeView.swift */; };
+		FE68B7F32DD0D2500073A521 /* TestHivesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE68B7F22DD0D2500073A521 /* TestHivesList.swift */; };
 		FE8DB24B2DABCFDE0026530B /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DB24A2DABCFDE0026530B /* String+Ext.swift */; };
 		FE8DB2502DABD4CB0026530B /* AnimatedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DB24F2DABD4CB0026530B /* AnimatedText.swift */; };
 		FE8DB2522DABDEF60026530B /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DB2512DABDEF60026530B /* ForgotPasswordView.swift */; };
@@ -65,6 +68,9 @@
 		FE60575A2DA9C8A0004DC314 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FE6057692DAB0F23004DC314 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		FE60576C2DAB13D2004DC314 /* SignInState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInState.swift; sourceTree = "<group>"; };
+		FE68B7E82DCFE3720073A521 /* TestExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExpenseView.swift; sourceTree = "<group>"; };
+		FE68B7F02DD0B36A0073A521 /* TestHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHomeView.swift; sourceTree = "<group>"; };
+		FE68B7F22DD0D2500073A521 /* TestHivesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHivesList.swift; sourceTree = "<group>"; };
 		FE8DB24A2DABCFDE0026530B /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		FE8DB24F2DABD4CB0026530B /* AnimatedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedText.swift; sourceTree = "<group>"; };
 		FE8DB2512DABDEF60026530B /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -100,11 +106,16 @@
 		FE50AB6E2DBA864500CD6E72 /* Prototypes */ = {
 			isa = PBXGroup;
 			children = (
-				FE50AB9A2DBD3F8D00CD6E72 /* Test */,
+				FE50AB982DBD3F8700CD6E72 /* TestViewModel.swift */,
+				FE50AB962DBD3F7300CD6E72 /* TestView1.swift */,
 				FE50AB6F2DBA86D000CD6E72 /* HomeView.swift */,
+				FE50ABA52DBE890500CD6E72 /* TaskView.swift */,
 				FE50AB7B2DBAA41900CD6E72 /* BeeYardCardView.swift */,
 				FE50AB712DBA86E400CD6E72 /* ToDoView.swift */,
 				FE50AB732DBA86FD00CD6E72 /* ExpensesView.swift */,
+				FE68B7E82DCFE3720073A521 /* TestExpenseView.swift */,
+				FE68B7F02DD0B36A0073A521 /* TestHomeView.swift */,
+				FE68B7F22DD0D2500073A521 /* TestHivesList.swift */,
 			);
 			path = Prototypes;
 			sourceTree = "<group>";
@@ -137,46 +148,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		FE50AB9A2DBD3F8D00CD6E72 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				FE50AB9B2DBD3FC000CD6E72 /* ViewModel */,
-				FE50AB9C2DBD3FC800CD6E72 /* View */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
-		FE50AB9B2DBD3FC000CD6E72 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				FE50AB982DBD3F8700CD6E72 /* TestViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		FE50AB9C2DBD3FC800CD6E72 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				FE50ABA42DBE88F600CD6E72 /* Task */,
-				FE50AB962DBD3F7300CD6E72 /* TestView1.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		FE50ABA12DBE887D00CD6E72 /* PrototypeModels */ = {
 			isa = PBXGroup;
 			children = (
 				FE50ABA22DBE888800CD6E72 /* BeeTask.swift */,
 			);
 			path = PrototypeModels;
-			sourceTree = "<group>";
-		};
-		FE50ABA42DBE88F600CD6E72 /* Task */ = {
-			isa = PBXGroup;
-			children = (
-				FE50ABA52DBE890500CD6E72 /* TaskView.swift */,
-			);
-			path = Task;
 			sourceTree = "<group>";
 		};
 		FE6057672DAB0CF5004DC314 /* Authentication */ = {
@@ -371,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE68B7E92DCFE3720073A521 /* TestExpenseView.swift in Sources */,
 				FE50ABA62DBE890500CD6E72 /* TaskView.swift in Sources */,
 				FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */,
 				FE50AB702DBA86D000CD6E72 /* HomeView.swift in Sources */,
@@ -385,6 +363,7 @@
 				FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */,
 				FE50AB812DBAAC2800CD6E72 /* TabBarView.swift in Sources */,
 				FE50AB722DBA86E400CD6E72 /* ToDoView.swift in Sources */,
+				FE68B7F12DD0B36A0073A521 /* TestHomeView.swift in Sources */,
 				FE50ABAE2DBEE9DB00CD6E72 /* EditProfileView.swift in Sources */,
 				FE50AB8D2DBBF6A200CD6E72 /* AuthProviderOption.swift in Sources */,
 				FEED69D12D96E15E00F7A171 /* AuthenticationView.swift in Sources */,
@@ -396,6 +375,7 @@
 				FE50AB992DBD3F8700CD6E72 /* TestViewModel.swift in Sources */,
 				FE8DB2522DABDEF60026530B /* ForgotPasswordView.swift in Sources */,
 				FEED69D82D96E56300F7A171 /* SignInWithEmailView.swift in Sources */,
+				FE68B7F32DD0D2500073A521 /* TestHivesList.swift in Sources */,
 				FE60576D2DAB13D2004DC314 /* SignInState.swift in Sources */,
 				FE60576A2DAB0F23004DC314 /* AuthenticationError.swift in Sources */,
 				FE8DB24B2DABCFDE0026530B /* String+Ext.swift in Sources */,

@@ -10,8 +10,8 @@ import SwiftUI
 struct BeeYardCardView: View {
     
     let imageName: String
-    let name: String = "Pasieka na działeczce"
-    let location: String = "Dzialka Radoma, ul. Dzialkowa 14"
+    let name: String = "Ul przy drzewie"
+    let location: String = "Dzialeczka, ul. Dzialkowa 14"
 
     var body: some View {
         VStack(spacing: 0) {

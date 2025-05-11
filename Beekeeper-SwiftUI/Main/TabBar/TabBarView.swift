@@ -14,11 +14,12 @@ struct TabBarView: View {
     var body: some View {
         TabView {
             NavigationStack {
-                TestView1()
+                //TestView1()
+                TestHomeView()
             }
             .tabItem {
                 Image(systemName: "house.lodge.fill")
-                Text("Bee yards")
+                Text("Bee hives")
             }
             
             
@@ -32,7 +33,8 @@ struct TabBarView: View {
             }
             
             NavigationStack {
-                ExpensesView()
+                TestExpenseView()
+                //ExpensesView()
             }
             .tabItem {
                 Image(systemName: "dollarsign")
@@ -56,5 +58,8 @@ struct TabBarView: View {
         .environmentObject( AuthenticationViewModel(
                                 authService: AuthenticationService()
                             )
+        )
+        .environmentObject(
+            TestViewModel(userService: UserService(), authService: AuthenticationService())
         )
 }
