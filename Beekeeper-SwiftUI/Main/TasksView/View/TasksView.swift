@@ -10,38 +10,21 @@ import SwiftUI
 struct TasksView: View {
     
     @EnvironmentObject var viewModel: TasksViewModel
-    @State private var searchText: String = ""
     @State private var isAddingTask: Bool = false
     
     var body: some View {
         VStack {
-            if viewModel.tasksArray.isEmpty {
-                noResults
+            if viewModel.isLoading && viewModel.tasksArray.isEmpty {
+                LoadingIndicatorView()
+            } else if viewModel.tasksArray.isEmpty {
+                noTasks
             } else {
-                List(viewModel.tasksArray, id: \.taskId) { task in
-                    TaskCellView(task: task) {
-                        Task {
-                            await viewModel.toggleTaskCompletion(task)
-                        }
-                    }
-                    .swipeActions(edge:.leading, allowsFullSwipe: true) {
-                        Button(role: .destructive) {
-                            Task {
-                                await viewModel.deleteTask(task.taskId)
-                            }
-                        } label: {
-                            Label("Delete", systemImage: "xmark.bin.fill")
-                        }
-                        .tint(.red)
-                    }
-                }
-                .listStyle(PlainListStyle())
-                .searchable(text: $searchText)
+                tasksList
             }
         }
         .onAppear {
             Task {
-                await viewModel.fetchTasks()
+                await viewModel.fetchTasks(dontShowLoadingIndicator: false)
             }
         }
         .toolbar {
@@ -61,13 +44,54 @@ struct TasksView: View {
                 .presentationDetents([.medium, .large])
         }
         .navigationTitle(Text("Tasks"))
+        .overlay {
+            if viewModel.isLoading && !viewModel.tasksArray.isEmpty {
+                LoadingIndicatorView()
+            }
+        }
     }
     
-    var noResults: some View {
+    var tasksList: some View {
+        List(viewModel.filteredTasks, id: \.taskId) { task in
+            TaskCellView(task: task) {
+                Task {
+                    await viewModel.toggleTaskCompletion(task)
+                }
+            }
+            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                Button(role: .destructive) {
+                    Task {
+                        await viewModel.deleteTask(task.taskId)
+                    }
+                } label: {
+                    Label("Delete", systemImage: "trash.fill")
+                }
+                .tint(.red)
+            }
+        }
+        .listStyle(PlainListStyle())
+        .searchable(text: $viewModel.searchText, prompt: "Search for tasks")
+        .overlay {
+            if viewModel.filteredTasks.isEmpty && !viewModel.searchText.isEmpty {
+                noSearchingResults
+            }
+        }
+    }
+    
+    var noTasks: some View {
         ContentUnavailableView(
             "No tasks",
-            systemImage: "xmark.circle",
+            systemImage: "xmark",
             description: Text("Add a task to get started.")
+        )
+        .padding()
+    }
+    
+    var noSearchingResults: some View {
+        ContentUnavailableView(
+            "No matching tasks",
+            systemImage: "magnifyingglass",
+            description: Text("Try a different search term.")
         )
     }
 }

@@ -23,7 +23,6 @@
 		FE50AB992DBD3F8700CD6E72 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB982DBD3F8700CD6E72 /* TestViewModel.swift */; };
 		FE50AB9E2DBD6ABD00CD6E72 /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB9D2DBD6AB900CD6E72 /* DBUser.swift */; };
 		FE50ABA32DBE889300CD6E72 /* BeeTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50ABA22DBE888800CD6E72 /* BeeTask.swift */; };
-		FE50ABA62DBE890500CD6E72 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50ABA52DBE890500CD6E72 /* TaskView.swift */; };
 		FE50ABAE2DBEE9DB00CD6E72 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50ABAD2DBEE9DB00CD6E72 /* EditProfileView.swift */; };
 		FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60575A2DA9C8A0004DC314 /* SettingsView.swift */; };
 		FE60576A2DAB0F23004DC314 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6057692DAB0F23004DC314 /* AuthenticationError.swift */; };
@@ -51,6 +50,7 @@
 		FEFA18602DD637D000C23333 /* TasksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA185F2DD637D000C23333 /* TasksViewModel.swift */; };
 		FEFA18622DD6381400C23333 /* TasksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA18612DD6381400C23333 /* TasksService.swift */; };
 		FEFA18642DD652AE00C23333 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA18632DD652AE00C23333 /* AddTaskView.swift */; };
+		FEFA18662DD6794600C23333 /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA18652DD6794600C23333 /* LoadingIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +68,6 @@
 		FE50AB982DBD3F8700CD6E72 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		FE50AB9D2DBD6AB900CD6E72 /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
 		FE50ABA22DBE888800CD6E72 /* BeeTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeTask.swift; sourceTree = "<group>"; };
-		FE50ABA52DBE890500CD6E72 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		FE50ABAD2DBEE9DB00CD6E72 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		FE60575A2DA9C8A0004DC314 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FE6057692DAB0F23004DC314 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
@@ -95,6 +94,7 @@
 		FEFA185F2DD637D000C23333 /* TasksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewModel.swift; sourceTree = "<group>"; };
 		FEFA18612DD6381400C23333 /* TasksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksService.swift; sourceTree = "<group>"; };
 		FEFA18632DD652AE00C23333 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		FEFA18652DD6794600C23333 /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +119,6 @@
 				FE50AB982DBD3F8700CD6E72 /* TestViewModel.swift */,
 				FE50AB962DBD3F7300CD6E72 /* TestView1.swift */,
 				FE50AB6F2DBA86D000CD6E72 /* HomeView.swift */,
-				FE50ABA52DBE890500CD6E72 /* TaskView.swift */,
 				FE50AB7B2DBAA41900CD6E72 /* BeeYardCardView.swift */,
 				FE50AB712DBA86E400CD6E72 /* ToDoView.swift */,
 				FE50AB732DBA86FD00CD6E72 /* ExpensesView.swift */,
@@ -183,6 +182,7 @@
 			children = (
 				FE6057692DAB0F23004DC314 /* AuthenticationError.swift */,
 				FE8DB24F2DABD4CB0026530B /* AnimatedText.swift */,
+				FEFA18652DD6794600C23333 /* LoadingIndicatorView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -381,8 +381,8 @@
 			files = (
 				FE68B7E92DCFE3720073A521 /* TestExpenseView.swift in Sources */,
 				FEFA18602DD637D000C23333 /* TasksViewModel.swift in Sources */,
-				FE50ABA62DBE890500CD6E72 /* TaskView.swift in Sources */,
 				FEFA18642DD652AE00C23333 /* AddTaskView.swift in Sources */,
+				FEFA18662DD6794600C23333 /* LoadingIndicatorView.swift in Sources */,
 				FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */,
 				FE50AB702DBA86D000CD6E72 /* HomeView.swift in Sources */,
 				FE50AB7E2DBAA80500CD6E72 /* View+Ext.swift in Sources */,
