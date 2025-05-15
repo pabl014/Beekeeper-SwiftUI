@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct TaskView: View {
+struct TaskView2: View {
     
     @State private var searchText: String = ""
     
     var body: some View {
         
         List(BeeTask.MOCK_TASKS, id: \.taskId) { task in
-            TaskCellView(task: task) {
+            Task2CellView(task: task) {
                 print("isCompletedToggled for task: \(task.taskName)")
             }
             .swipeActions(edge:.leading, allowsFullSwipe: true) {
@@ -47,11 +47,11 @@ struct TaskView: View {
 
 #Preview {
     NavigationStack {
-        TaskView()
+        TaskView2()
     }
 }
 
-struct TaskCellView: View {
+struct Task2CellView: View {
 
     let task: BeeTask
     var onCirclePressed: (() -> Void)? = nil

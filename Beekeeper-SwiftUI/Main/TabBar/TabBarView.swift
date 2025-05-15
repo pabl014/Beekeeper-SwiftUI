@@ -25,7 +25,8 @@ struct TabBarView: View {
             
             NavigationStack {
                 //ToDoView()
-                TaskView()
+                //TaskView2()
+                TasksView()
             }
             .tabItem {
                 Image(systemName: "list.star")

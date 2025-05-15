@@ -151,7 +151,7 @@ struct MapViewForCommunity: View {
                 ))
             }
         }
-        .mapStyle(.standard)
+        .mapStyle(.hybrid)
         .frame(width: 380, height: 500)
         .clipShape(RoundedRectangle(cornerRadius: 25))
         .padding(.bottom)

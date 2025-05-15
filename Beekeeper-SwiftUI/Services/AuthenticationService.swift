@@ -12,6 +12,8 @@ import GoogleSignInSwift
 
 
 protocol AuthServiceProtocol {
+    var currentUserId: String? { get }
+    
     func signInWithEmail(email: String, password: String) async throws -> AuthDataResultModel
     func signUpWithEmail(email: String, password: String) async throws -> AuthDataResultModel
     func sendPasswordReset(email: String) async throws
@@ -25,6 +27,10 @@ protocol AuthServiceProtocol {
 final class AuthenticationService: AuthServiceProtocol {
     
     private let firebaseAuth = Auth.auth()
+    
+    var currentUserId: String? {
+        return Auth.auth().currentUser?.uid
+    }
     
     func signInWithEmail(email: String, password: String) async throws -> AuthDataResultModel {
         do {
@@ -121,38 +127,6 @@ extension AuthenticationService {
             }
         }
     }
-    
-//    private func authenticateGoogleUser(for user: GIDGoogleUser?) async throws -> AuthDataResultModel {
-//        guard let idToken = user?.idToken?.tokenString else {
-//            throw AuthError.invalidCredential
-//        }
-//        
-//        let credential = GoogleAuthProvider.credential(
-//            withIDToken: idToken,
-//            accessToken: user?.accessToken.tokenString ?? ""
-//        )
-//        
-//        do {
-//            let result = try await Auth.auth().signIn(with: credential)
-//            
-//            
-//            //  Update displayName with "name + surname"
-//            let fullName = user?.profile?.name ?? "Google User"
-//            let changeRequest = result.user.createProfileChangeRequest()
-//            changeRequest.displayName = fullName
-//            try await changeRequest.commitChanges()
-//            
-//            // Save user to Firestore
-//            let dbUser = DBUser(auth: AuthDataResultModel(user: result.user))
-//            let userService = UserService()
-//            try await userService.createNewUser(user: dbUser)
-//            
-//            return AuthDataResultModel(user: result.user)
-//            
-//        } catch {
-//            throw AuthError.signInFailed(description: error.localizedDescription)
-//        }
-//    }
     
     private func authenticateGoogleUser(for user: GIDGoogleUser?) async throws -> AuthDataResultModel {
         guard let idToken = user?.idToken?.tokenString else {
