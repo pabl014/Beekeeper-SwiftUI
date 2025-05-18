@@ -18,6 +18,7 @@ protocol TasksServiceProtocol {
 final class TasksService: TasksServiceProtocol {
 
     private let db = Firestore.firestore()
+    private let tasksCollection = "tasks"
 
     private let encoder: Firestore.Encoder = {
         let encoder = Firestore.Encoder()
@@ -33,7 +34,7 @@ final class TasksService: TasksServiceProtocol {
 
     func addTask(_ task: BeeTask, forUserId userId: String) async throws -> String {
         
-        let docRef = db.collection("tasks").document()
+        let docRef = db.collection(tasksCollection).document()
         
         let taskWithFirestoreId = BeeTask(
             taskId: docRef.documentID,
@@ -50,7 +51,7 @@ final class TasksService: TasksServiceProtocol {
     }
 
     func fetchTasks(forUserId userId: String) async throws -> [BeeTask] {
-        let snapshot = try await db.collection("tasks")
+        let snapshot = try await db.collection(tasksCollection)
             .whereField("user_id", isEqualTo: userId)
             .getDocuments()
 
@@ -60,13 +61,13 @@ final class TasksService: TasksServiceProtocol {
     }
 
     func deleteTask(_ taskId: String, forUserId userId: String) async throws {
-        try await db.collection("tasks")
+        try await db.collection(tasksCollection)
             .document(taskId)
             .delete()
     }
     
     func updateTaskCompletion(taskId: String, isCompleted: Bool) async throws {
-        try await db.collection("tasks")
+        try await db.collection(tasksCollection)
             .document(taskId)
             .updateData([
                 "is_completed": isCompleted

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FE50AB702DBA86D000CD6E72 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB6F2DBA86D000CD6E72 /* HomeView.swift */; };
 		FE50AB7C2DBAA41900CD6E72 /* BeeYardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB7B2DBAA41900CD6E72 /* BeeYardCardView.swift */; };
 		FE50AB7E2DBAA80500CD6E72 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB7D2DBAA80500CD6E72 /* View+Ext.swift */; };
 		FE50AB812DBAAC2800CD6E72 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB802DBAAC2800CD6E72 /* TabBarView.swift */; };
@@ -25,7 +24,6 @@
 		FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60575A2DA9C8A0004DC314 /* SettingsView.swift */; };
 		FE60576A2DAB0F23004DC314 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6057692DAB0F23004DC314 /* AuthenticationError.swift */; };
 		FE60576D2DAB13D2004DC314 /* SignInState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60576C2DAB13D2004DC314 /* SignInState.swift */; };
-		FE68B7E92DCFE3720073A521 /* TestExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE68B7E82DCFE3720073A521 /* TestExpenseView.swift */; };
 		FE68B7F12DD0B36A0073A521 /* TestHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE68B7F02DD0B36A0073A521 /* TestHomeView.swift */; };
 		FE68B7F32DD0D2500073A521 /* TestHivesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE68B7F22DD0D2500073A521 /* TestHivesList.swift */; };
 		FE8DB24B2DABCFDE0026530B /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DB24A2DABCFDE0026530B /* String+Ext.swift */; };
@@ -62,7 +60,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FE50AB6F2DBA86D000CD6E72 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FE50AB7B2DBAA41900CD6E72 /* BeeYardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeYardCardView.swift; sourceTree = "<group>"; };
 		FE50AB7D2DBAA80500CD6E72 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		FE50AB802DBAAC2800CD6E72 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -78,7 +75,6 @@
 		FE60575A2DA9C8A0004DC314 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FE6057692DAB0F23004DC314 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		FE60576C2DAB13D2004DC314 /* SignInState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInState.swift; sourceTree = "<group>"; };
-		FE68B7E82DCFE3720073A521 /* TestExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExpenseView.swift; sourceTree = "<group>"; };
 		FE68B7F02DD0B36A0073A521 /* TestHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHomeView.swift; sourceTree = "<group>"; };
 		FE68B7F22DD0D2500073A521 /* TestHivesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHivesList.swift; sourceTree = "<group>"; };
 		FE8DB24A2DABCFDE0026530B /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
@@ -134,9 +130,7 @@
 			children = (
 				FE50AB982DBD3F8700CD6E72 /* TestViewModel.swift */,
 				FE50AB962DBD3F7300CD6E72 /* TestView1.swift */,
-				FE50AB6F2DBA86D000CD6E72 /* HomeView.swift */,
 				FE50AB7B2DBAA41900CD6E72 /* BeeYardCardView.swift */,
-				FE68B7E82DCFE3720073A521 /* TestExpenseView.swift */,
 				FE68B7F02DD0B36A0073A521 /* TestHomeView.swift */,
 				FE68B7F22DD0D2500073A521 /* TestHivesList.swift */,
 			);
@@ -435,7 +429,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE68B7E92DCFE3720073A521 /* TestExpenseView.swift in Sources */,
 				FEFA18722DD7614400C23333 /* TransactionsViewModel.swift in Sources */,
 				FEFA18702DD760E600C23333 /* TransactionsService.swift in Sources */,
 				FEFA18602DD637D000C23333 /* TasksViewModel.swift in Sources */,
@@ -443,7 +436,6 @@
 				FEFA186A2DD7579400C23333 /* TransactionsView.swift in Sources */,
 				FEFA18662DD6794600C23333 /* LoadingIndicatorView.swift in Sources */,
 				FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */,
-				FE50AB702DBA86D000CD6E72 /* HomeView.swift in Sources */,
 				FE50AB7E2DBAA80500CD6E72 /* View+Ext.swift in Sources */,
 				FE8DB2502DABD4CB0026530B /* AnimatedText.swift in Sources */,
 				FE50AB9E2DBD6ABD00CD6E72 /* DBUser.swift in Sources */,

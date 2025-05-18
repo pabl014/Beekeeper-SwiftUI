@@ -14,7 +14,6 @@ struct TabBarView: View {
     var body: some View {
         TabView {
             NavigationStack {
-                //TestView1()
                 TestHomeView()
             }
             .tabItem {
@@ -24,8 +23,6 @@ struct TabBarView: View {
             
             
             NavigationStack {
-                //ToDoView()
-                //TaskView2()
                 TasksView()
             }
             .tabItem {
@@ -34,8 +31,6 @@ struct TabBarView: View {
             }
             
             NavigationStack {
-                //TestExpenseView()
-                //ExpensesView()
                 TransactionsView()
             }
             .tabItem {
