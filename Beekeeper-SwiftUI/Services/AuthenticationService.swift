@@ -10,20 +10,6 @@ import FirebaseAuth
 import GoogleSignIn
 import GoogleSignInSwift
 
-
-protocol AuthServiceProtocol {
-    var currentUserId: String? { get }
-    
-    func signInWithEmail(email: String, password: String) async throws -> AuthDataResultModel
-    func signUpWithEmail(email: String, password: String) async throws -> AuthDataResultModel
-    func sendPasswordReset(email: String) async throws
-    func signOut() async throws
-    func getCurrentUser() -> AuthDataResultModel?
-    func signInWithGoogle() async throws -> AuthDataResultModel
-    func getProviders() throws -> [AuthProviderOption]
-}
-
-
 final class AuthenticationService: AuthServiceProtocol {
     
     private let firebaseAuth = Auth.auth()

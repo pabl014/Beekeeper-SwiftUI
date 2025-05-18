@@ -57,6 +57,10 @@
 		FEFA187A2DD9F70C00C23333 /* AllTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA18792DD9F70C00C23333 /* AllTransactionsView.swift */; };
 		FEFA187C2DD9F77400C23333 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA187B2DD9F77400C23333 /* AddTransactionView.swift */; };
 		FEFA187E2DDA0ACA00C23333 /* TransactionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA187D2DDA0AC500C23333 /* TransactionFilter.swift */; };
+		FEFA18812DDA44D600C23333 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA18802DDA44CD00C23333 /* AuthServiceProtocol.swift */; };
+		FEFA18832DDA44FC00C23333 /* UserServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA18822DDA44F400C23333 /* UserServiceProtocol.swift */; };
+		FEFA18852DDA452000C23333 /* TasksServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA18842DDA451900C23333 /* TasksServiceProtocol.swift */; };
+		FEFA18872DDA454A00C23333 /* TransactionsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA18862DDA454000C23333 /* TransactionsServiceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +111,10 @@
 		FEFA18792DD9F70C00C23333 /* AllTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTransactionsView.swift; sourceTree = "<group>"; };
 		FEFA187B2DD9F77400C23333 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
 		FEFA187D2DDA0AC500C23333 /* TransactionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFilter.swift; sourceTree = "<group>"; };
+		FEFA18802DDA44CD00C23333 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
+		FEFA18822DDA44F400C23333 /* UserServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceProtocol.swift; sourceTree = "<group>"; };
+		FEFA18842DDA451900C23333 /* TasksServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksServiceProtocol.swift; sourceTree = "<group>"; };
+		FEFA18862DDA454000C23333 /* TransactionsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +190,7 @@
 		FE60576E2DAB25D5004DC314 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FEFA187F2DDA449E00C23333 /* Protocols */,
 				FEED69DF2D96E9AD00F7A171 /* AuthenticationService.swift */,
 				FE50AB942DBC41C300CD6E72 /* UserService.swift */,
 				FEFA18612DD6381400C23333 /* TasksService.swift */,
@@ -346,6 +355,17 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		FEFA187F2DDA449E00C23333 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA18862DDA454000C23333 /* TransactionsServiceProtocol.swift */,
+				FEFA18842DDA451900C23333 /* TasksServiceProtocol.swift */,
+				FEFA18822DDA44F400C23333 /* UserServiceProtocol.swift */,
+				FEFA18802DDA44CD00C23333 /* AuthServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -447,6 +467,7 @@
 				FEFA187A2DD9F70C00C23333 /* AllTransactionsView.swift in Sources */,
 				FEFA18592DD618A100C23333 /* TasksView.swift in Sources */,
 				FEFA187C2DD9F77400C23333 /* AddTransactionView.swift in Sources */,
+				FEFA18832DDA44FC00C23333 /* UserServiceProtocol.swift in Sources */,
 				FE50AB952DBC41C300CD6E72 /* UserService.swift in Sources */,
 				FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */,
 				FE50AB812DBAAC2800CD6E72 /* TabBarView.swift in Sources */,
@@ -454,6 +475,7 @@
 				FEFA18622DD6381400C23333 /* TasksService.swift in Sources */,
 				FE50ABAE2DBEE9DB00CD6E72 /* EditProfileView.swift in Sources */,
 				FEFA187E2DDA0ACA00C23333 /* TransactionFilter.swift in Sources */,
+				FEFA18872DDA454A00C23333 /* TransactionsServiceProtocol.swift in Sources */,
 				FE50AB8D2DBBF6A200CD6E72 /* AuthProviderOption.swift in Sources */,
 				FEED69D12D96E15E00F7A171 /* AuthenticationView.swift in Sources */,
 				FEFA18742DD76A9600C23333 /* TransactionRowCell.swift in Sources */,
@@ -462,7 +484,9 @@
 				FE50AB7C2DBAA41900CD6E72 /* BeeYardCardView.swift in Sources */,
 				FEFA186E2DD75E7200C23333 /* TransactionModel.swift in Sources */,
 				FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */,
+				FEFA18812DDA44D600C23333 /* AuthServiceProtocol.swift in Sources */,
 				FEED69E02D96E9AD00F7A171 /* AuthenticationService.swift in Sources */,
+				FEFA18852DDA452000C23333 /* TasksServiceProtocol.swift in Sources */,
 				FE50AB992DBD3F8700CD6E72 /* TestViewModel.swift in Sources */,
 				FE8DB2522DABDEF60026530B /* ForgotPasswordView.swift in Sources */,
 				FEFA18762DD778AB00C23333 /* Double+Ext.swift in Sources */,

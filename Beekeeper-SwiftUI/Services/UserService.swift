@@ -8,13 +8,6 @@
 import Foundation
 import FirebaseFirestore
 
-protocol UserServiceProtocol {
-    func createNewUser(user: DBUser) async throws
-    func getUser(userId: String) async throws -> DBUser
-    func incrementYardsCount(userId: String) async throws
-}
-
-
 final class UserService: UserServiceProtocol {
     
     private let db = Firestore.firestore()

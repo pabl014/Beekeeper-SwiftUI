@@ -8,13 +8,6 @@
 import Foundation
 import FirebaseFirestore
 
-protocol TasksServiceProtocol {
-    func fetchTasks(forUserId userId: String) async throws -> [BeeTask]
-    func addTask(_ task: BeeTask, forUserId userId: String) async throws -> String
-    func deleteTask(_ taskId: String, forUserId userId: String) async throws
-    func updateTaskCompletion(taskId: String, isCompleted: Bool) async throws
-}
-
 final class TasksService: TasksServiceProtocol {
 
     private let db = Firestore.firestore()

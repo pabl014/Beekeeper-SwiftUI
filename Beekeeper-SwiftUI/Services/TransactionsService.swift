@@ -8,12 +8,6 @@
 import Foundation
 import FirebaseFirestore
 
-protocol TransactionsServiceProtocol {
-    func addTransaction(_ transaction: TransactionModel) async throws
-    func deleteTransaction(id: String) async throws
-    func getAllTransactions(userId: String) async throws -> [TransactionModel]
-}
-
 final class TransactionsService: TransactionsServiceProtocol {
     
     private let db = Firestore.firestore()
