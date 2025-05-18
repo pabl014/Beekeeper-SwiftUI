@@ -34,8 +34,9 @@ struct TabBarView: View {
             }
             
             NavigationStack {
-                TestExpenseView()
+                //TestExpenseView()
                 //ExpensesView()
+                TransactionsView()
             }
             .tabItem {
                 Image(systemName: "dollarsign")
