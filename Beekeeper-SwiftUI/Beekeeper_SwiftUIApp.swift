@@ -14,17 +14,19 @@ struct Beekeeper_SwiftUIApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     @StateObject var authViewModel = AuthenticationViewModel(authService: AuthenticationService(), userService: UserService())
-    @StateObject var testViewModel = TestViewModel(userService: UserService(), authService: AuthenticationService())
+    //@StateObject var testViewModel = TestViewModel(userService: UserService(), authService: AuthenticationService())
     @StateObject var tasksViewModel = TasksViewModel(authService: AuthenticationService(), tasksService: TasksService())
     @StateObject var transactionsViewModel = TransactionsViewModel(authService: AuthenticationService(), transactionsService: TransactionsService())
+    @StateObject var homeViewModel = HomeViewModel(authService: AuthenticationService(), hivesService: HivesService())
     
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environmentObject(authViewModel)
-                .environmentObject(testViewModel)
+                //.environmentObject(testViewModel)
                 .environmentObject(tasksViewModel)
                 .environmentObject(transactionsViewModel)
+                .environmentObject(homeViewModel)
         }
     }
 }

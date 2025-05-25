@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FE50AB7C2DBAA41900CD6E72 /* BeeYardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB7B2DBAA41900CD6E72 /* BeeYardCardView.swift */; };
+		FE50AB7C2DBAA41900CD6E72 /* HiveCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB7B2DBAA41900CD6E72 /* HiveCardView.swift */; };
 		FE50AB7E2DBAA80500CD6E72 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB7D2DBAA80500CD6E72 /* View+Ext.swift */; };
 		FE50AB812DBAAC2800CD6E72 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB802DBAAC2800CD6E72 /* TabBarView.swift */; };
 		FE50AB852DBBA84F00CD6E72 /* AuthDataResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB842DBBA84F00CD6E72 /* AuthDataResultModel.swift */; };
@@ -16,19 +16,24 @@
 		FE50AB8D2DBBF6A200CD6E72 /* AuthProviderOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB8C2DBBF6A200CD6E72 /* AuthProviderOption.swift */; };
 		FE50AB932DBC3B9E00CD6E72 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FE50AB922DBC3B9E00CD6E72 /* FirebaseFirestore */; };
 		FE50AB952DBC41C300CD6E72 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB942DBC41C300CD6E72 /* UserService.swift */; };
-		FE50AB972DBD3F7300CD6E72 /* TestView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB962DBD3F7300CD6E72 /* TestView1.swift */; };
-		FE50AB992DBD3F8700CD6E72 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB982DBD3F8700CD6E72 /* TestViewModel.swift */; };
 		FE50AB9E2DBD6ABD00CD6E72 /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB9D2DBD6AB900CD6E72 /* DBUser.swift */; };
 		FE50ABA32DBE889300CD6E72 /* BeeTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50ABA22DBE888800CD6E72 /* BeeTask.swift */; };
 		FE50ABAE2DBEE9DB00CD6E72 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50ABAD2DBEE9DB00CD6E72 /* EditProfileView.swift */; };
 		FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60575A2DA9C8A0004DC314 /* SettingsView.swift */; };
 		FE60576A2DAB0F23004DC314 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6057692DAB0F23004DC314 /* AuthenticationError.swift */; };
 		FE60576D2DAB13D2004DC314 /* SignInState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60576C2DAB13D2004DC314 /* SignInState.swift */; };
-		FE68B7F12DD0B36A0073A521 /* TestHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE68B7F02DD0B36A0073A521 /* TestHomeView.swift */; };
-		FE68B7F32DD0D2500073A521 /* TestHivesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE68B7F22DD0D2500073A521 /* TestHivesList.swift */; };
 		FE8DB24B2DABCFDE0026530B /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DB24A2DABCFDE0026530B /* String+Ext.swift */; };
 		FE8DB2502DABD4CB0026530B /* AnimatedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DB24F2DABD4CB0026530B /* AnimatedText.swift */; };
 		FE8DB2522DABDEF60026530B /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DB2512DABDEF60026530B /* ForgotPasswordView.swift */; };
+		FEB883DC2DE216C900D31380 /* HiveHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883DB2DE216C900D31380 /* HiveHeader.swift */; };
+		FEB883DF2DE348FB00D31380 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883DE2DE348FB00D31380 /* HomeView.swift */; };
+		FEB883E32DE34A0800D31380 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883E22DE34A0800D31380 /* HomeViewModel.swift */; };
+		FEB883E52DE34A7600D31380 /* HivesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883E42DE34A7600D31380 /* HivesService.swift */; };
+		FEB883E72DE3A7A800D31380 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883E62DE3A7A500D31380 /* LocationModel.swift */; };
+		FEB883EA2DE3C0AB00D31380 /* MapViewForHives.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883E92DE3C0A100D31380 /* MapViewForHives.swift */; };
+		FEB883EC2DE3C9A700D31380 /* HivesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883EB2DE3C9A700D31380 /* HivesListView.swift */; };
+		FEB883EE2DE3CC8D00D31380 /* HiveListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883ED2DE3CC8D00D31380 /* HiveListCell.swift */; };
+		FEB883F22DE3D69100D31380 /* AddHiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883F12DE3D69100D31380 /* AddHiveView.swift */; };
 		FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE15782DA1C49D00DC4D17 /* RootView.swift */; };
 		FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */; };
 		FEED69C12D96CC7900F7A171 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FEED69C02D96CC7900F7A171 /* FirebaseAnalytics */; };
@@ -61,29 +66,37 @@
 		FEFA18832DDA44FC00C23333 /* UserServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA18822DDA44F400C23333 /* UserServiceProtocol.swift */; };
 		FEFA18852DDA452000C23333 /* TasksServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA18842DDA451900C23333 /* TasksServiceProtocol.swift */; };
 		FEFA18872DDA454A00C23333 /* TransactionsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA18862DDA454000C23333 /* TransactionsServiceProtocol.swift */; };
+		FEFA188C2DDB8AB900C23333 /* HiveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA188B2DDB8AB900C23333 /* HiveDetailView.swift */; };
+		FEFA188E2DDB8B3000C23333 /* Hive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA188D2DDB8B2D00C23333 /* Hive.swift */; };
+		FEFA18982DDB9B6E00C23333 /* ExpandableMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA18972DDB9B6E00C23333 /* ExpandableMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FE50AB7B2DBAA41900CD6E72 /* BeeYardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeYardCardView.swift; sourceTree = "<group>"; };
+		FE50AB7B2DBAA41900CD6E72 /* HiveCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveCardView.swift; sourceTree = "<group>"; };
 		FE50AB7D2DBAA80500CD6E72 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		FE50AB802DBAAC2800CD6E72 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		FE50AB842DBBA84F00CD6E72 /* AuthDataResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataResultModel.swift; sourceTree = "<group>"; };
 		FE50AB8B2DBBB22C00CD6E72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FE50AB8C2DBBF6A200CD6E72 /* AuthProviderOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProviderOption.swift; sourceTree = "<group>"; };
 		FE50AB942DBC41C300CD6E72 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		FE50AB962DBD3F7300CD6E72 /* TestView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView1.swift; sourceTree = "<group>"; };
-		FE50AB982DBD3F8700CD6E72 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		FE50AB9D2DBD6AB900CD6E72 /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
 		FE50ABA22DBE888800CD6E72 /* BeeTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeTask.swift; sourceTree = "<group>"; };
 		FE50ABAD2DBEE9DB00CD6E72 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		FE60575A2DA9C8A0004DC314 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FE6057692DAB0F23004DC314 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		FE60576C2DAB13D2004DC314 /* SignInState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInState.swift; sourceTree = "<group>"; };
-		FE68B7F02DD0B36A0073A521 /* TestHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHomeView.swift; sourceTree = "<group>"; };
-		FE68B7F22DD0D2500073A521 /* TestHivesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHivesList.swift; sourceTree = "<group>"; };
 		FE8DB24A2DABCFDE0026530B /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		FE8DB24F2DABD4CB0026530B /* AnimatedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedText.swift; sourceTree = "<group>"; };
 		FE8DB2512DABDEF60026530B /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		FEB883DB2DE216C900D31380 /* HiveHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveHeader.swift; sourceTree = "<group>"; };
+		FEB883DE2DE348FB00D31380 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FEB883E22DE34A0800D31380 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FEB883E42DE34A7600D31380 /* HivesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HivesService.swift; sourceTree = "<group>"; };
+		FEB883E62DE3A7A500D31380 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		FEB883E92DE3C0A100D31380 /* MapViewForHives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewForHives.swift; sourceTree = "<group>"; };
+		FEB883EB2DE3C9A700D31380 /* HivesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HivesListView.swift; sourceTree = "<group>"; };
+		FEB883ED2DE3CC8D00D31380 /* HiveListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveListCell.swift; sourceTree = "<group>"; };
+		FEB883F12DE3D69100D31380 /* AddHiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHiveView.swift; sourceTree = "<group>"; };
 		FEDE15782DA1C49D00DC4D17 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailView.swift; sourceTree = "<group>"; };
 		FEED69AC2D96BCBB00F7A171 /* Beekeeper-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beekeeper-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +128,9 @@
 		FEFA18822DDA44F400C23333 /* UserServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceProtocol.swift; sourceTree = "<group>"; };
 		FEFA18842DDA451900C23333 /* TasksServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksServiceProtocol.swift; sourceTree = "<group>"; };
 		FEFA18862DDA454000C23333 /* TransactionsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsServiceProtocol.swift; sourceTree = "<group>"; };
+		FEFA188B2DDB8AB900C23333 /* HiveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveDetailView.swift; sourceTree = "<group>"; };
+		FEFA188D2DDB8B2D00C23333 /* Hive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hive.swift; sourceTree = "<group>"; };
+		FEFA18972DDB9B6E00C23333 /* ExpandableMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,22 +149,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FE50AB6E2DBA864500CD6E72 /* Prototypes */ = {
-			isa = PBXGroup;
-			children = (
-				FE50AB982DBD3F8700CD6E72 /* TestViewModel.swift */,
-				FE50AB962DBD3F7300CD6E72 /* TestView1.swift */,
-				FE50AB7B2DBAA41900CD6E72 /* BeeYardCardView.swift */,
-				FE68B7F02DD0B36A0073A521 /* TestHomeView.swift */,
-				FE68B7F22DD0D2500073A521 /* TestHivesList.swift */,
-			);
-			path = Prototypes;
-			sourceTree = "<group>";
-		};
 		FE50AB7F2DBAABFE00CD6E72 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				FE50AB822DBBA7BB00CD6E72 /* TabBar */,
+				FEFA188A2DDB8AA600C23333 /* Hives */,
 				FEFA185A2DD618A700C23333 /* Tasks */,
 				FEFA18682DD756FF00C23333 /* Transactions */,
 				FEFA18672DD67CD800C23333 /* Settings */,
@@ -167,13 +172,16 @@
 		FE50AB832DBBA83500CD6E72 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FE50ABA22DBE888800CD6E72 /* BeeTask.swift */,
 				FE50AB9D2DBD6AB900CD6E72 /* DBUser.swift */,
 				FE50AB842DBBA84F00CD6E72 /* AuthDataResultModel.swift */,
+				FE50ABA22DBE888800CD6E72 /* BeeTask.swift */,
+				FEFA186D2DD75E7200C23333 /* TransactionModel.swift */,
+				FEB883E62DE3A7A500D31380 /* LocationModel.swift */,
+				FEFA188D2DDB8B2D00C23333 /* Hive.swift */,
+				FEFA187D2DDA0AC500C23333 /* TransactionFilter.swift */,
 				FE50AB8C2DBBF6A200CD6E72 /* AuthProviderOption.swift */,
 				FE60576C2DAB13D2004DC314 /* SignInState.swift */,
-				FEFA186D2DD75E7200C23333 /* TransactionModel.swift */,
-				FEFA187D2DDA0AC500C23333 /* TransactionFilter.swift */,
+				FE60576E2DAB25D5004DC314 /* Service */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -187,16 +195,13 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		FE60576E2DAB25D5004DC314 /* Services */ = {
+		FE60576E2DAB25D5004DC314 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				FEFA187F2DDA449E00C23333 /* Protocols */,
-				FEED69DF2D96E9AD00F7A171 /* AuthenticationService.swift */,
-				FE50AB942DBC41C300CD6E72 /* UserService.swift */,
-				FEFA18612DD6381400C23333 /* TasksService.swift */,
-				FEFA186F2DD760E600C23333 /* TransactionsService.swift */,
+				FEB883E82DE3A9A600D31380 /* Services */,
 			);
-			path = Services;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		FE60576F2DAB2C8E004DC314 /* Utils */ = {
@@ -239,6 +244,58 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		FEB883DA2DE2167C00D31380 /* HiveDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA188B2DDB8AB900C23333 /* HiveDetailView.swift */,
+				FEFA18972DDB9B6E00C23333 /* ExpandableMapView.swift */,
+				FEB883DB2DE216C900D31380 /* HiveHeader.swift */,
+			);
+			path = HiveDetail;
+			sourceTree = "<group>";
+		};
+		FEB883DD2DE348D800D31380 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FEB883E02DE349E400D31380 /* ViewModel */,
+				FEB883E12DE349F000D31380 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FEB883E02DE349E400D31380 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FEB883E22DE34A0800D31380 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FEB883E12DE349F000D31380 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FEB883DE2DE348FB00D31380 /* HomeView.swift */,
+				FEB883E92DE3C0A100D31380 /* MapViewForHives.swift */,
+				FE50AB7B2DBAA41900CD6E72 /* HiveCardView.swift */,
+				FEB883EB2DE3C9A700D31380 /* HivesListView.swift */,
+				FEB883ED2DE3CC8D00D31380 /* HiveListCell.swift */,
+				FEB883F12DE3D69100D31380 /* AddHiveView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEB883E82DE3A9A600D31380 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FEED69DF2D96E9AD00F7A171 /* AuthenticationService.swift */,
+				FE50AB942DBC41C300CD6E72 /* UserService.swift */,
+				FEFA18612DD6381400C23333 /* TasksService.swift */,
+				FEFA186F2DD760E600C23333 /* TransactionsService.swift */,
+				FEB883E42DE34A7600D31380 /* HivesService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		FEED69A32D96BCBB00F7A171 = {
 			isa = PBXGroup;
 			children = (
@@ -278,10 +335,8 @@
 				FEED69CD2D96E15E00F7A171 /* Beekeeper_SwiftUIApp.swift */,
 				FEDE15782DA1C49D00DC4D17 /* RootView.swift */,
 				FE50AB832DBBA83500CD6E72 /* Models */,
-				FE60576E2DAB25D5004DC314 /* Services */,
 				FE6057672DAB0CF5004DC314 /* Authentication */,
 				FE50AB7F2DBAABFE00CD6E72 /* Main */,
-				FE50AB6E2DBA864500CD6E72 /* Prototypes */,
 				FE60576F2DAB2C8E004DC314 /* Utils */,
 				FE8DB24C2DABCFF00026530B /* Extensions */,
 				FEED69CA2D96E15E00F7A171 /* Preview Content */,
@@ -364,6 +419,15 @@
 				FEFA18802DDA44CD00C23333 /* AuthServiceProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FEFA188A2DDB8AA600C23333 /* Hives */ = {
+			isa = PBXGroup;
+			children = (
+				FEB883DD2DE348D800D31380 /* Home */,
+				FEB883DA2DE2167C00D31380 /* HiveDetail */,
+			);
+			path = Hives;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,26 +516,31 @@
 				FEFA18722DD7614400C23333 /* TransactionsViewModel.swift in Sources */,
 				FEFA18702DD760E600C23333 /* TransactionsService.swift in Sources */,
 				FEFA18602DD637D000C23333 /* TasksViewModel.swift in Sources */,
+				FEB883EA2DE3C0AB00D31380 /* MapViewForHives.swift in Sources */,
 				FEFA18642DD652AE00C23333 /* AddTaskView.swift in Sources */,
 				FEFA186A2DD7579400C23333 /* TransactionsView.swift in Sources */,
+				FEB883EC2DE3C9A700D31380 /* HivesListView.swift in Sources */,
 				FEFA18662DD6794600C23333 /* LoadingIndicatorView.swift in Sources */,
 				FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */,
 				FE50AB7E2DBAA80500CD6E72 /* View+Ext.swift in Sources */,
+				FEFA188C2DDB8AB900C23333 /* HiveDetailView.swift in Sources */,
 				FE8DB2502DABD4CB0026530B /* AnimatedText.swift in Sources */,
 				FE50AB9E2DBD6ABD00CD6E72 /* DBUser.swift in Sources */,
 				FEFA18782DD778C100C23333 /* Date+Ext.swift in Sources */,
 				FE50AB852DBBA84F00CD6E72 /* AuthDataResultModel.swift in Sources */,
-				FE50AB972DBD3F7300CD6E72 /* TestView1.swift in Sources */,
 				FE50ABA32DBE889300CD6E72 /* BeeTask.swift in Sources */,
 				FEFA185E2DD6192200C23333 /* TaskCellView.swift in Sources */,
+				FEB883E32DE34A0800D31380 /* HomeViewModel.swift in Sources */,
 				FEFA187A2DD9F70C00C23333 /* AllTransactionsView.swift in Sources */,
 				FEFA18592DD618A100C23333 /* TasksView.swift in Sources */,
+				FEB883E52DE34A7600D31380 /* HivesService.swift in Sources */,
 				FEFA187C2DD9F77400C23333 /* AddTransactionView.swift in Sources */,
+				FEB883DC2DE216C900D31380 /* HiveHeader.swift in Sources */,
 				FEFA18832DDA44FC00C23333 /* UserServiceProtocol.swift in Sources */,
+				FEB883E72DE3A7A800D31380 /* LocationModel.swift in Sources */,
 				FE50AB952DBC41C300CD6E72 /* UserService.swift in Sources */,
 				FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */,
 				FE50AB812DBAAC2800CD6E72 /* TabBarView.swift in Sources */,
-				FE68B7F12DD0B36A0073A521 /* TestHomeView.swift in Sources */,
 				FEFA18622DD6381400C23333 /* TasksService.swift in Sources */,
 				FE50ABAE2DBEE9DB00CD6E72 /* EditProfileView.swift in Sources */,
 				FEFA187E2DDA0ACA00C23333 /* TransactionFilter.swift in Sources */,
@@ -481,19 +550,22 @@
 				FEFA18742DD76A9600C23333 /* TransactionRowCell.swift in Sources */,
 				FEED69D22D96E15E00F7A171 /* Beekeeper_SwiftUIApp.swift in Sources */,
 				FEED69E22D96EB0700F7A171 /* AuthenticationViewModel.swift in Sources */,
-				FE50AB7C2DBAA41900CD6E72 /* BeeYardCardView.swift in Sources */,
+				FE50AB7C2DBAA41900CD6E72 /* HiveCardView.swift in Sources */,
 				FEFA186E2DD75E7200C23333 /* TransactionModel.swift in Sources */,
 				FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */,
 				FEFA18812DDA44D600C23333 /* AuthServiceProtocol.swift in Sources */,
 				FEED69E02D96E9AD00F7A171 /* AuthenticationService.swift in Sources */,
+				FEB883F22DE3D69100D31380 /* AddHiveView.swift in Sources */,
+				FEFA188E2DDB8B3000C23333 /* Hive.swift in Sources */,
+				FEB883EE2DE3CC8D00D31380 /* HiveListCell.swift in Sources */,
+				FEB883DF2DE348FB00D31380 /* HomeView.swift in Sources */,
 				FEFA18852DDA452000C23333 /* TasksServiceProtocol.swift in Sources */,
-				FE50AB992DBD3F8700CD6E72 /* TestViewModel.swift in Sources */,
 				FE8DB2522DABDEF60026530B /* ForgotPasswordView.swift in Sources */,
 				FEFA18762DD778AB00C23333 /* Double+Ext.swift in Sources */,
 				FEED69D82D96E56300F7A171 /* SignInWithEmailView.swift in Sources */,
-				FE68B7F32DD0D2500073A521 /* TestHivesList.swift in Sources */,
 				FE60576D2DAB13D2004DC314 /* SignInState.swift in Sources */,
 				FE60576A2DAB0F23004DC314 /* AuthenticationError.swift in Sources */,
+				FEFA18982DDB9B6E00C23333 /* ExpandableMapView.swift in Sources */,
 				FE8DB24B2DABCFDE0026530B /* String+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

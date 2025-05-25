@@ -14,13 +14,12 @@ struct TabBarView: View {
     var body: some View {
         TabView {
             NavigationStack {
-                TestHomeView()
+                HomeView()
             }
             .tabItem {
                 Image(systemName: "house.lodge.fill")
                 Text("Bee hives")
             }
-            
             
             NavigationStack {
                 TasksView()
@@ -56,7 +55,7 @@ struct TabBarView: View {
                                 authService: AuthenticationService()
                             )
         )
-        .environmentObject(
-            TestViewModel(userService: UserService(), authService: AuthenticationService())
-        )
+//        .environmentObject(
+//            TestViewModel(userService: UserService(), authService: AuthenticationService())
+//        )
 }
