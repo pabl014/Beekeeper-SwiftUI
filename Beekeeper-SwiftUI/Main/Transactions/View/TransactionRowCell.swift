@@ -13,7 +13,7 @@ struct TransactionRowCell: View {
     
     private var formattedAmountWithSign: String {
         let sign = transactionModel.type == 0 ? "- " : ""
-        return "\(sign)\(transactionModel.amount.asCurrencyString) $"
+        return "\(sign)\(transactionModel.amount.as2DigitString) $"
     }
     
     var body: some View {

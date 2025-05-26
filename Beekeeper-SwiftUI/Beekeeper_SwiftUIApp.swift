@@ -18,6 +18,7 @@ struct Beekeeper_SwiftUIApp: App {
     @StateObject var tasksViewModel = TasksViewModel(authService: AuthenticationService(), tasksService: TasksService())
     @StateObject var transactionsViewModel = TransactionsViewModel(authService: AuthenticationService(), transactionsService: TransactionsService())
     @StateObject var homeViewModel = HomeViewModel(authService: AuthenticationService(), hivesService: HivesService())
+    //@StateObject var homeDetailViewModel = HiveDetailViewModel(authService: AuthenticationService(), hivesService: HivesService())
     
     var body: some Scene {
         WindowGroup {
@@ -27,6 +28,8 @@ struct Beekeeper_SwiftUIApp: App {
                 .environmentObject(tasksViewModel)
                 .environmentObject(transactionsViewModel)
                 .environmentObject(homeViewModel)
+                //.environmentObject(homeDetailViewModel)
+            
         }
     }
 }

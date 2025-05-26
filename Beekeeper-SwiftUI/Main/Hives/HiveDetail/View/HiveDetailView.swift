@@ -7,11 +7,43 @@
 
 import SwiftUI
 
-struct Hive2DetailView: View {
+struct HiveDetailView: View {
     
-    let hive: Hive
+    @StateObject private var viewModel = HiveDetailViewModel(authService: AuthenticationService(), hivesService: HivesService())
+    
+    let hiveId: String
     
     var body: some View {
+        
+        Group {
+            if viewModel.isLoading {
+                ProgressView("Loading hive details...")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else if let hive = viewModel.hive {
+                hiveDetailContent(hive: hive)
+            } else {
+                ContentUnavailableView(
+                    "Hive not found",
+                    systemImage: "exclamationmark.triangle",
+                    description: Text("Unable to load hive details")
+                )
+            }
+        }
+        .navigationTitle("Hive Details")
+        .navigationBarTitleDisplayMode(.inline)
+        .task {
+            // Jeśli nie mamy danych, załaduj je
+            if viewModel.hive == nil {
+                await viewModel.loadHive(id: hiveId)
+            }
+        }
+        .refreshable {
+            await viewModel.loadHive(id: hiveId)
+        }
+    }
+        
+    @ViewBuilder
+    private func hiveDetailContent(hive: Hive) -> some View {
         ScrollView(.vertical) {
             VStack(alignment: .leading, spacing: 16) {
                 HiveHeader(
@@ -25,33 +57,22 @@ struct Hive2DetailView: View {
                     lat: hive.latitude,
                     long: hive.longitude
                 )
-                
-                // Grid z komórkami danych
+    
                 Grid(alignment: .center, horizontalSpacing: 16, verticalSpacing: 16) {
-                    // Pierwszy rząd
                     GridRow {
-                        // Komórka stanu matki
-                        beeMotherCell
-                        
-                        // Komórka liczby ramek
-                        framesCountCell
+                        beeMotherCell(hive: hive)
+                        framesCountCell(hive: hive)
                     }
                     
-                    // Drugi rząd
                     GridRow {
-                        // Komórka stanu zdrowia
-                        healthStateCell
-                        
-                        // Komórka z datą założenia
-                        establishedCell
+                        healthStateCell(hive: hive)
+                        establishedCell(hive: hive)
                     }
-                    
-                    // Trzeci rząd - komórka na pełną szerokość
+                
                     GridRow {
-                        lastFeedingCell
+                        lastFeedingCell(hive: hive)
                     }
-                    
-                    // Czwarty rząd
+                
                     GridRow {
                         HiveDataCell(
                             title: "Weather",
@@ -111,70 +132,72 @@ struct Hive2DetailView: View {
                 .padding(.bottom, 20)
             }
         }
-        .navigationTitle("Szczegóły ula")
+        .navigationTitle("Hive details")
         .navigationBarTitleDisplayMode(.inline)
     }
     
-    // Określenie koloru dla stanu zdrowia
+    
+    // Determine color based on health state
     func healthColor(_ state: String) -> Color {
         switch state.lowercased() {
-        case "dobry", "zdrowy":
+        case "good", "healthy":
             return .green
-        case "średni", "przeciętny":
+        case "average", "moderate":
             return .yellow
-        case "zły", "chory":
+        case "bad", "sick":
             return .red
         default:
             return .blue
         }
     }
-    
-    // Określenie ikony dla stanu zdrowia
+
+    // Determine system image icon based on health state
     func healthSystemImage(_ state: String) -> String {
         switch state.lowercased() {
-        case "dobry", "zdrowy":
+        case "good", "healthy":
             return "checkmark.circle.fill"
-        case "średni", "przeciętny":
+        case "average", "moderate":
             return "exclamationmark.circle.fill"
-        case "zły", "chory":
+        case "bad", "sick":
             return "xmark.circle.fill"
         default:
             return "questionmark.circle.fill"
         }
     }
+
     
-    // Określenie koloru dla stanu matki
+    // Determines the color for queen bee state
     func motherStateColor(_ state: String) -> Color {
         switch state.lowercased() {
-        case "aktywna", "dobra":
+        case "active", "good":
             return .orange
-        case "stara", "słabnąca":
+        case "old", "weakening":
             return .yellow
-        case "nowa", "młoda":
+        case "new", "young":
             return .green
         default:
             return .gray
         }
     }
-    
-    // Określenie ikony dla stanu matki
+
+    // Determines the icon for queen bee state
     func motherStateIcon(_ state: String) -> String {
         switch state.lowercased() {
-        case "aktywna", "dobra":
+        case "active", "good":
             return "star.fill"
-        case "stara", "słabnąca":
+        case "old", "weakening":
             return "clock.fill"
-        case "nowa", "młoda":
+        case "new", "young":
             return "sparkles"
         default:
             return "crown.fill"
         }
     }
     
-    var beeMotherCell: some View {
+    func beeMotherCell(hive: Hive) -> some View {
         HiveDataCell(
             title: "Bee mother",
-            icon: "crown.fill",
+            icon: motherStateIcon(hive.motherState),
             iconColor: motherStateColor(hive.motherState)
         ) {
             VStack(spacing: 8) {
@@ -189,11 +212,11 @@ struct Hive2DetailView: View {
             }
             .padding(.vertical)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .multilineTextAlignment(.center)
-        }
+                .multilineTextAlignment(.center)
+            }
     }
     
-    var framesCountCell: some View {
+    func framesCountCell(hive: Hive) -> some View {
         HiveDataCell(
             title: "Frames count",
             icon: "square.grid.2x2.fill",
@@ -210,10 +233,10 @@ struct Hive2DetailView: View {
         }
     }
     
-    var healthStateCell: some View {
+    func healthStateCell(hive: Hive) -> some View {
         HiveDataCell(
             title: "Health state",
-            icon: "heart.fill",
+            icon: healthSystemImage(hive.healthState),
             iconColor: healthColor(hive.healthState)
         ) {
             VStack(spacing: 8) {
@@ -232,7 +255,7 @@ struct Hive2DetailView: View {
         }
     }
     
-    var establishedCell: some View {
+    func establishedCell(hive: Hive) -> some View {
         HiveDataCell(
             title: "Established",
             icon: "calendar",
@@ -254,7 +277,7 @@ struct Hive2DetailView: View {
         }
     }
     
-    var lastFeedingCell: some View {
+    func lastFeedingCell(hive: Hive) -> some View {
         HiveDataCell(
             title: "Last feeding",
             icon: "drop.fill",
@@ -284,7 +307,7 @@ struct Hive2DetailView: View {
                         .font(.body)
                         .foregroundStyle(.secondary)
                     
-                    Text("\(hive.lastFeedAmount) kg")
+                    Text("\(hive.lastFeedAmount.as2DigitString) kg")
                         .font(.title2)
                         .fontWeight(.semibold)
                         .foregroundStyle(.cyan)
@@ -322,34 +345,3 @@ struct Hive2DetailView: View {
 
 
 
-struct HiveDataCell<Content: View>: View {
-    var title: String
-    var icon: String
-    var iconColor: Color
-    var gridCellColumns: Int = 1
-    let content: () -> Content
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack {
-                Image(systemName: icon)
-                    .foregroundStyle(iconColor)
-                
-                Text(title)
-                    .font(.callout)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(.secondary)
-                
-                Spacer()
-                
-            }
-            content()
-        }
-        .padding()
-        .frame(minHeight: 140)
-        .background(Color(UIColor.secondarySystemBackground).opacity(0.9))
-        .cornerRadius(20)
-        .shadow(radius: 5)
-        .gridCellColumns(gridCellColumns)
-    }
-}

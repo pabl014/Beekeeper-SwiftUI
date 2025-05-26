@@ -10,8 +10,8 @@ import FirebaseFirestore
 
 protocol HivesServiceProtocol {
     func fetchHives(for userId: String) async throws -> [Hive]
+    func getHive(hiveId: String) async throws -> Hive
 }
-
 
 final class HivesService: HivesServiceProtocol {
     
@@ -39,6 +39,14 @@ final class HivesService: HivesServiceProtocol {
         return try snapshot.documents.compactMap { document in
             try document.data(as: Hive.self, decoder: decoder)
         }
+    }
+    
+    func getHive(hiveId: String) async throws -> Hive {
+        let document = try await db.collection(hivesCollection)
+            .document(hiveId)
+            .getDocument()
+        
+        return try document.data(as: Hive.self, decoder: decoder)
     }
 }
 

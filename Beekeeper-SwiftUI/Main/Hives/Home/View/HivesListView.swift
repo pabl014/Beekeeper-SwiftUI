@@ -26,7 +26,8 @@ struct HivesListView: View {
         List {
             ForEach(filteredHives) { hive in
                 NavigationLink {
-                    Text("detail view")
+                    HiveDetailView(hiveId: hive.hiveId)
+                        .id(hive.hiveId)
                 } label: {
                     HiveListCell(
                         imageUrl: hive.photoUrl,

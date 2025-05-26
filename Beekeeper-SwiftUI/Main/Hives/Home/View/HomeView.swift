@@ -81,8 +81,8 @@ struct HomeView: View {
             HStack(spacing: 10) {
                 ForEach(viewModel.hivesArray) { hive in
                     NavigationLink {
-                        //BeeYardDetailView()
-                        Text("detail view")
+                        HiveDetailView(hiveId: hive.hiveId)
+                            .id(hive.hiveId)
                     } label: {
                         HiveCardView(
                             imageUrl: hive.photoUrl,

@@ -34,6 +34,8 @@
 		FEB883EC2DE3C9A700D31380 /* HivesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883EB2DE3C9A700D31380 /* HivesListView.swift */; };
 		FEB883EE2DE3CC8D00D31380 /* HiveListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883ED2DE3CC8D00D31380 /* HiveListCell.swift */; };
 		FEB883F22DE3D69100D31380 /* AddHiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883F12DE3D69100D31380 /* AddHiveView.swift */; };
+		FEB883F62DE4BE8900D31380 /* HiveDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883F52DE4BE8900D31380 /* HiveDetailViewModel.swift */; };
+		FEB883F82DE4D7FA00D31380 /* HiveDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883F72DE4D7FA00D31380 /* HiveDataCell.swift */; };
 		FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE15782DA1C49D00DC4D17 /* RootView.swift */; };
 		FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */; };
 		FEED69C12D96CC7900F7A171 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FEED69C02D96CC7900F7A171 /* FirebaseAnalytics */; };
@@ -97,6 +99,8 @@
 		FEB883EB2DE3C9A700D31380 /* HivesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HivesListView.swift; sourceTree = "<group>"; };
 		FEB883ED2DE3CC8D00D31380 /* HiveListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveListCell.swift; sourceTree = "<group>"; };
 		FEB883F12DE3D69100D31380 /* AddHiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHiveView.swift; sourceTree = "<group>"; };
+		FEB883F52DE4BE8900D31380 /* HiveDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveDetailViewModel.swift; sourceTree = "<group>"; };
+		FEB883F72DE4D7FA00D31380 /* HiveDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveDataCell.swift; sourceTree = "<group>"; };
 		FEDE15782DA1C49D00DC4D17 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailView.swift; sourceTree = "<group>"; };
 		FEED69AC2D96BCBB00F7A171 /* Beekeeper-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beekeeper-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,9 +251,8 @@
 		FEB883DA2DE2167C00D31380 /* HiveDetail */ = {
 			isa = PBXGroup;
 			children = (
-				FEFA188B2DDB8AB900C23333 /* HiveDetailView.swift */,
-				FEFA18972DDB9B6E00C23333 /* ExpandableMapView.swift */,
-				FEB883DB2DE216C900D31380 /* HiveHeader.swift */,
+				FEB883F32DE4BDD200D31380 /* ViewModel */,
+				FEB883F42DE4BDDC00D31380 /* View */,
 			);
 			path = HiveDetail;
 			sourceTree = "<group>";
@@ -294,6 +297,25 @@
 				FEB883E42DE34A7600D31380 /* HivesService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		FEB883F32DE4BDD200D31380 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FEB883F52DE4BE8900D31380 /* HiveDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FEB883F42DE4BDDC00D31380 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA188B2DDB8AB900C23333 /* HiveDetailView.swift */,
+				FEFA18972DDB9B6E00C23333 /* ExpandableMapView.swift */,
+				FEB883DB2DE216C900D31380 /* HiveHeader.swift */,
+				FEB883F72DE4D7FA00D31380 /* HiveDataCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FEED69A32D96BCBB00F7A171 = {
@@ -548,6 +570,7 @@
 				FE50AB8D2DBBF6A200CD6E72 /* AuthProviderOption.swift in Sources */,
 				FEED69D12D96E15E00F7A171 /* AuthenticationView.swift in Sources */,
 				FEFA18742DD76A9600C23333 /* TransactionRowCell.swift in Sources */,
+				FEB883F82DE4D7FA00D31380 /* HiveDataCell.swift in Sources */,
 				FEED69D22D96E15E00F7A171 /* Beekeeper_SwiftUIApp.swift in Sources */,
 				FEED69E22D96EB0700F7A171 /* AuthenticationViewModel.swift in Sources */,
 				FE50AB7C2DBAA41900CD6E72 /* HiveCardView.swift in Sources */,
@@ -560,6 +583,7 @@
 				FEB883EE2DE3CC8D00D31380 /* HiveListCell.swift in Sources */,
 				FEB883DF2DE348FB00D31380 /* HomeView.swift in Sources */,
 				FEFA18852DDA452000C23333 /* TasksServiceProtocol.swift in Sources */,
+				FEB883F62DE4BE8900D31380 /* HiveDetailViewModel.swift in Sources */,
 				FE8DB2522DABDEF60026530B /* ForgotPasswordView.swift in Sources */,
 				FEFA18762DD778AB00C23333 /* Double+Ext.swift in Sources */,
 				FEED69D82D96E56300F7A171 /* SignInWithEmailView.swift in Sources */,

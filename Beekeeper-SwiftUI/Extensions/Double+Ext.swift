@@ -8,7 +8,7 @@
 import Foundation
 
 extension Double {
-    var asCurrencyString: String {
+    var as2DigitString: String {
         String(format: "%.2f", self)
     }
 }

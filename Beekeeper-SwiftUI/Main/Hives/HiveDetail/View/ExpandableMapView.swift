@@ -33,7 +33,7 @@ struct ExpandableMapView: View {
             }
             
             if isExpanded {
-                MapViewForHive(latitude: lat, longitude: long)
+                MapViewForOneHive(latitude: lat, longitude: long)
             }
         }
         .background(.white)
@@ -48,7 +48,7 @@ struct ExpandableMapView: View {
 }
 
 
-struct MapViewForHive: View {
+struct MapViewForOneHive: View {
     
     let latitude: Double
     let longitude: Double
@@ -72,8 +72,8 @@ struct MapViewForHive: View {
                     latitude: latitude,
                     longitude: longitude
                 ),
-                latitudinalMeters: 2000,
-                longitudinalMeters: 2000)
+                latitudinalMeters: 100,
+                longitudinalMeters: 100)
             )
         }
         .mapStyle(.hybrid)

@@ -32,7 +32,7 @@ struct TransactionsView: View {
                             .font(.caption)
                             .foregroundColor(.secondary)
                             
-                        Text("\(viewModel.balance.asCurrencyString) $")
+                        Text("\(viewModel.balance.as2DigitString) $")
                             .font(.largeTitle)
                             .fontWeight(.bold)
                     }
@@ -116,7 +116,7 @@ struct TransactionsView: View {
             Text("Total Incomes")
                 .font(.caption)
                 .foregroundColor(.secondary)
-            Text("\(viewModel.totalIncomes.asCurrencyString) $")
+            Text("\(viewModel.totalIncomes.as2DigitString) $")
                 .font(.headline)
                 .fontWeight(.bold)
             
@@ -134,7 +134,7 @@ struct TransactionsView: View {
             Text("Total Expenses")
                 .font(.caption)
                 .foregroundColor(.secondary)
-            Text("\(viewModel.totalExpenses.asCurrencyString) $")
+            Text("\(viewModel.totalExpenses.as2DigitString) $")
                 .font(.headline)
                 .fontWeight(.bold)
         }
