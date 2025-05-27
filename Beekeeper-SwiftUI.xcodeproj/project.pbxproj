@@ -37,6 +37,8 @@
 		FEB883FA2DE4FA5F00D31380 /* MotherState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883F92DE4FA5F00D31380 /* MotherState.swift */; };
 		FEB883FC2DE4FA8C00D31380 /* HealthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883FB2DE4FA8C00D31380 /* HealthState.swift */; };
 		FEB884042DE61C9200D31380 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB884032DE61C9200D31380 /* LocationManager.swift */; };
+		FEB884062DE64F6200D31380 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB884052DE64F6200D31380 /* WeatherManager.swift */; };
+		FEB884082DE64F9300D31380 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB884072DE64F8E00D31380 /* Secrets.swift */; };
 		FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE15782DA1C49D00DC4D17 /* RootView.swift */; };
 		FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */; };
 		FEED69C12D96CC7900F7A171 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FEED69C02D96CC7900F7A171 /* FirebaseAnalytics */; };
@@ -103,6 +105,8 @@
 		FEB883F92DE4FA5F00D31380 /* MotherState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherState.swift; sourceTree = "<group>"; };
 		FEB883FB2DE4FA8C00D31380 /* HealthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthState.swift; sourceTree = "<group>"; };
 		FEB884032DE61C9200D31380 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		FEB884052DE64F6200D31380 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		FEB884072DE64F8E00D31380 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		FEDE15782DA1C49D00DC4D17 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailView.swift; sourceTree = "<group>"; };
 		FEED69AC2D96BCBB00F7A171 /* Beekeeper-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beekeeper-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +218,7 @@
 		FE60576F2DAB2C8E004DC314 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FEB884072DE64F8E00D31380 /* Secrets.swift */,
 				FE6057692DAB0F23004DC314 /* AuthenticationError.swift */,
 				FEFA18652DD6794600C23333 /* LoadingIndicatorView.swift */,
 			);
@@ -298,6 +303,7 @@
 				FEFA186F2DD760E600C23333 /* TransactionsService.swift */,
 				FEB883E42DE34A7600D31380 /* HivesService.swift */,
 				FEB884032DE61C9200D31380 /* LocationManager.swift */,
+				FEB884052DE64F6200D31380 /* WeatherManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -560,6 +566,7 @@
 				FEFA18592DD618A100C23333 /* TasksView.swift in Sources */,
 				FEB883E52DE34A7600D31380 /* HivesService.swift in Sources */,
 				FEFA187C2DD9F77400C23333 /* AddTransactionView.swift in Sources */,
+				FEB884062DE64F6200D31380 /* WeatherManager.swift in Sources */,
 				FEB883DC2DE216C900D31380 /* HiveHeader.swift in Sources */,
 				FEFA18832DDA44FC00C23333 /* UserServiceProtocol.swift in Sources */,
 				FEB883E72DE3A7A800D31380 /* LocationModel.swift in Sources */,
@@ -587,6 +594,7 @@
 				FEFA18852DDA452000C23333 /* TasksServiceProtocol.swift in Sources */,
 				FEB883F62DE4BE8900D31380 /* HiveDetailViewModel.swift in Sources */,
 				FE8DB2522DABDEF60026530B /* ForgotPasswordView.swift in Sources */,
+				FEB884082DE64F9300D31380 /* Secrets.swift in Sources */,
 				FEB883FC2DE4FA8C00D31380 /* HealthState.swift in Sources */,
 				FEFA18762DD778AB00C23333 /* Double+Ext.swift in Sources */,
 				FEED69D82D96E56300F7A171 /* SignInWithEmailView.swift in Sources */,
