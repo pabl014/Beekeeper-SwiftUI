@@ -45,7 +45,6 @@ struct HomeView: View {
         }
         .sheet(isPresented: $isAddingHive) {
             AddHiveView()
-                .environmentObject(viewModel)
         }
         .toolbar {
             if !viewModel.hivesArray.isEmpty {

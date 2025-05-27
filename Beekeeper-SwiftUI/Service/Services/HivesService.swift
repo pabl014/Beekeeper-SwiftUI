@@ -11,6 +11,7 @@ import FirebaseFirestore
 protocol HivesServiceProtocol {
     func fetchHives(for userId: String) async throws -> [Hive]
     func getHive(hiveId: String) async throws -> Hive
+    func addHive(_ hive: Hive) async throws
 }
 
 final class HivesService: HivesServiceProtocol {
@@ -47,6 +48,30 @@ final class HivesService: HivesServiceProtocol {
             .getDocument()
         
         return try document.data(as: Hive.self, decoder: decoder)
+    }
+    
+    func addHive(_ hive: Hive) async throws {
+        let documentRef = db.collection(hivesCollection).document()
+        
+        var hiveWithId = hive
+        
+        hiveWithId = Hive(
+            hiveId: documentRef.documentID,
+            userId: hive.userId,
+            name: hive.name,
+            photoUrl: hive.photoUrl,
+            estDate: hive.estDate,
+            framesNumber: hive.framesNumber,
+            healthState: hive.healthState,
+            motherState: hive.motherState,
+            lastFeedDate: hive.lastFeedDate,
+            lastFeedAmount: hive.lastFeedAmount,
+            address: hive.address,
+            latitude: hive.latitude,
+            longitude: hive.longitude
+        )
+        
+        try documentRef.setData(from: hiveWithId, encoder: encoder)
     }
 }
 

@@ -16,18 +16,27 @@ struct HiveHeader: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            if let url = URL(string: imageUrl) {
-                AsyncImage(url: url) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                } placeholder: {
-                    Rectangle()
-                        .foregroundStyle(.gray.opacity(0.3))
+            
+            if imageUrl.isEmpty {
+                Rectangle()
+                    .foregroundStyle(.gray.opacity(0.3)) // Placeholder
+                    .frame(height: 250)
+                    .cornerRadius(20)
+            } else {
+                // Jeśli imageUrl nie jest pusty, ładowanie obrazu
+                if let url = URL(string: imageUrl) {
+                    AsyncImage(url: url) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                    } placeholder: {
+                        Rectangle()
+                            .foregroundStyle(.gray.opacity(0.3))
+                    }
+                    .clipped()
+                    .frame(height: 250)
+                    .cornerRadius(20)
                 }
-                .clipped()
-                .frame(height: 250)
-                .cornerRadius(20)
             }
             
             VStack(alignment: .leading, spacing: 10) {

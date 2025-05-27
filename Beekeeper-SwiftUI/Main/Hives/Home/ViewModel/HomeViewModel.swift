@@ -46,4 +46,47 @@ final class HomeViewModel: ObservableObject {
         
         isLoading = false
     }
+    
+    func addHive(
+        name: String,
+        estDate: Date,
+        framesNumber: Int,
+        healthState: HealthState,
+        motherState: MotherState,
+        lastFeedDate: Date,
+        lastFeedAmount: Double,
+        address: String,
+        latitude: String,
+        longitude: String
+    ) async throws {
+        guard let userId = currentUserId else {
+            errorMessage = "User not authenticated"
+            return
+        }
+        
+        // Convert string coordinates to Double
+        let lat = Double(latitude) ?? 0.0
+        let lng = Double(longitude) ?? 0.0
+        
+        let newHive = Hive(
+            hiveId: "", // Will be set by the service
+            userId: userId,
+            name: name,
+            photoUrl: "", // Empty for now, can be added later
+            estDate: estDate,
+            framesNumber: framesNumber,
+            healthState: healthState.rawValue,
+            motherState: motherState.rawValue,
+            lastFeedDate: lastFeedDate,
+            lastFeedAmount: lastFeedAmount,
+            address: address,
+            latitude: lat,
+            longitude: lng
+        )
+        
+        let _ = try await hivesService.addHive(newHive)
+        
+        // Reload hives to reflect the new addition
+        await loadHives()
+    }
 }

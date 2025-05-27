@@ -36,6 +36,8 @@
 		FEB883F22DE3D69100D31380 /* AddHiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883F12DE3D69100D31380 /* AddHiveView.swift */; };
 		FEB883F62DE4BE8900D31380 /* HiveDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883F52DE4BE8900D31380 /* HiveDetailViewModel.swift */; };
 		FEB883F82DE4D7FA00D31380 /* HiveDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883F72DE4D7FA00D31380 /* HiveDataCell.swift */; };
+		FEB883FA2DE4FA5F00D31380 /* MotherState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883F92DE4FA5F00D31380 /* MotherState.swift */; };
+		FEB883FC2DE4FA8C00D31380 /* HealthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883FB2DE4FA8C00D31380 /* HealthState.swift */; };
 		FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE15782DA1C49D00DC4D17 /* RootView.swift */; };
 		FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */; };
 		FEED69C12D96CC7900F7A171 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FEED69C02D96CC7900F7A171 /* FirebaseAnalytics */; };
@@ -101,6 +103,8 @@
 		FEB883F12DE3D69100D31380 /* AddHiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHiveView.swift; sourceTree = "<group>"; };
 		FEB883F52DE4BE8900D31380 /* HiveDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveDetailViewModel.swift; sourceTree = "<group>"; };
 		FEB883F72DE4D7FA00D31380 /* HiveDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveDataCell.swift; sourceTree = "<group>"; };
+		FEB883F92DE4FA5F00D31380 /* MotherState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherState.swift; sourceTree = "<group>"; };
+		FEB883FB2DE4FA8C00D31380 /* HealthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthState.swift; sourceTree = "<group>"; };
 		FEDE15782DA1C49D00DC4D17 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailView.swift; sourceTree = "<group>"; };
 		FEED69AC2D96BCBB00F7A171 /* Beekeeper-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beekeeper-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,7 +189,8 @@
 				FEFA187D2DDA0AC500C23333 /* TransactionFilter.swift */,
 				FE50AB8C2DBBF6A200CD6E72 /* AuthProviderOption.swift */,
 				FE60576C2DAB13D2004DC314 /* SignInState.swift */,
-				FE60576E2DAB25D5004DC314 /* Service */,
+				FEB883F92DE4FA5F00D31380 /* MotherState.swift */,
+				FEB883FB2DE4FA8C00D31380 /* HealthState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				FEED69CD2D96E15E00F7A171 /* Beekeeper_SwiftUIApp.swift */,
 				FEDE15782DA1C49D00DC4D17 /* RootView.swift */,
 				FE50AB832DBBA83500CD6E72 /* Models */,
+				FE60576E2DAB25D5004DC314 /* Service */,
 				FE6057672DAB0CF5004DC314 /* Authentication */,
 				FE50AB7F2DBAABFE00CD6E72 /* Main */,
 				FE60576F2DAB2C8E004DC314 /* Utils */,
@@ -551,6 +557,7 @@
 				FEFA18782DD778C100C23333 /* Date+Ext.swift in Sources */,
 				FE50AB852DBBA84F00CD6E72 /* AuthDataResultModel.swift in Sources */,
 				FE50ABA32DBE889300CD6E72 /* BeeTask.swift in Sources */,
+				FEB883FA2DE4FA5F00D31380 /* MotherState.swift in Sources */,
 				FEFA185E2DD6192200C23333 /* TaskCellView.swift in Sources */,
 				FEB883E32DE34A0800D31380 /* HomeViewModel.swift in Sources */,
 				FEFA187A2DD9F70C00C23333 /* AllTransactionsView.swift in Sources */,
@@ -585,6 +592,7 @@
 				FEFA18852DDA452000C23333 /* TasksServiceProtocol.swift in Sources */,
 				FEB883F62DE4BE8900D31380 /* HiveDetailViewModel.swift in Sources */,
 				FE8DB2522DABDEF60026530B /* ForgotPasswordView.swift in Sources */,
+				FEB883FC2DE4FA8C00D31380 /* HealthState.swift in Sources */,
 				FEFA18762DD778AB00C23333 /* Double+Ext.swift in Sources */,
 				FEED69D82D96E56300F7A171 /* SignInWithEmailView.swift in Sources */,
 				FE60576D2DAB13D2004DC314 /* SignInState.swift in Sources */,
