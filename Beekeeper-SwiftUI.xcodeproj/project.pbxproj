@@ -38,6 +38,7 @@
 		FEB883F82DE4D7FA00D31380 /* HiveDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883F72DE4D7FA00D31380 /* HiveDataCell.swift */; };
 		FEB883FA2DE4FA5F00D31380 /* MotherState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883F92DE4FA5F00D31380 /* MotherState.swift */; };
 		FEB883FC2DE4FA8C00D31380 /* HealthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883FB2DE4FA8C00D31380 /* HealthState.swift */; };
+		FEB884042DE61C9200D31380 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB884032DE61C9200D31380 /* LocationManager.swift */; };
 		FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE15782DA1C49D00DC4D17 /* RootView.swift */; };
 		FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */; };
 		FEED69C12D96CC7900F7A171 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FEED69C02D96CC7900F7A171 /* FirebaseAnalytics */; };
@@ -105,6 +106,7 @@
 		FEB883F72DE4D7FA00D31380 /* HiveDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveDataCell.swift; sourceTree = "<group>"; };
 		FEB883F92DE4FA5F00D31380 /* MotherState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherState.swift; sourceTree = "<group>"; };
 		FEB883FB2DE4FA8C00D31380 /* HealthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthState.swift; sourceTree = "<group>"; };
+		FEB884032DE61C9200D31380 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FEDE15782DA1C49D00DC4D17 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailView.swift; sourceTree = "<group>"; };
 		FEED69AC2D96BCBB00F7A171 /* Beekeeper-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beekeeper-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -300,6 +302,7 @@
 				FEFA18612DD6381400C23333 /* TasksService.swift */,
 				FEFA186F2DD760E600C23333 /* TransactionsService.swift */,
 				FEB883E42DE34A7600D31380 /* HivesService.swift */,
+				FEB884032DE61C9200D31380 /* LocationManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				FEB883FC2DE4FA8C00D31380 /* HealthState.swift in Sources */,
 				FEFA18762DD778AB00C23333 /* Double+Ext.swift in Sources */,
 				FEED69D82D96E56300F7A171 /* SignInWithEmailView.swift in Sources */,
+				FEB884042DE61C9200D31380 /* LocationManager.swift in Sources */,
 				FE60576D2DAB13D2004DC314 /* SignInState.swift in Sources */,
 				FE60576A2DAB0F23004DC314 /* AuthenticationError.swift in Sources */,
 				FEFA18982DDB9B6E00C23333 /* ExpandableMapView.swift in Sources */,

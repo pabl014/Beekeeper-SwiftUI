@@ -10,9 +10,9 @@ import SwiftUI
 struct AddHiveView: View {
     
     @EnvironmentObject var viewModel: HomeViewModel
+    @StateObject private var locationManager = LocationManager()
     @Environment(\.dismiss) private var dismiss
     
-    // Form fields
     @State private var name: String = ""
     @State private var estDate: Date = .now
     @State private var framesNumber: Int = 10
@@ -24,8 +24,14 @@ struct AddHiveView: View {
     @State private var latitude: String = ""
     @State private var longitude: String = ""
     
+    @State private var showingAlert = false
     @State private var isSaving = false
     @State private var errorMessage: String?
+    @State private var isLocationLoaded = false
+    
+    private var combinedErrorMessage: String? {
+        errorMessage ?? locationManager.errorMessage
+    }
     
     var body: some View {
         NavigationStack {
@@ -60,11 +66,13 @@ struct AddHiveView: View {
                 
                 Section(header: Text("Location")) {
                     TextField("Address", text: $address)
+                    
                     TextField("Latitude", text: $latitude)
                         .keyboardType(.decimalPad)
                         .onChange(of: latitude) { _, newValue in
                             latitude = formatDecimalInput(newValue)
                         }
+                    
                     TextField("Longitude", text: $longitude)
                         .keyboardType(.decimalPad)
                         .onChange(of: longitude) { _, newValue in
@@ -72,8 +80,8 @@ struct AddHiveView: View {
                         }
                 }
                 
-                if let error = errorMessage {
-                    Text(error)
+                if let locationError = locationManager.errorMessage {
+                    Text(locationError)
                         .foregroundColor(.red)
                 }
             }
@@ -97,19 +105,48 @@ struct AddHiveView: View {
                     }
                 }
             }
+            .alert("Error", isPresented: $showingAlert) {
+                Button("OK", role: .cancel) { }
+            } message: {
+                Text(combinedErrorMessage ?? "Something went wrong.")
+            }
+            .onAppear {
+                loadCurrentLocation()
+            }
+            .onDisappear {
+                locationManager.stopLocationUpdates()
+            }
+        }
+    }
+    
+    private func loadCurrentLocation() {
+        Task {
+            do {
+                let location = try await locationManager.requestLocation()
+                await MainActor.run {
+                    latitude = String(format: "%.6f", location.coordinate.latitude)
+                    longitude = String(format: "%.6f", location.coordinate.longitude)
+                    isLocationLoaded = true
+                }
+            } catch {
+                await MainActor.run {
+                    self.errorMessage = "Failed to get location: \(error.localizedDescription)"
+                    self.showingAlert = true
+                }
+            }
         }
     }
     
     private func createHive() {
         
         if !latitude.isEmpty && !isValidCoordinate(latitude) {
-            errorMessage = "Invalid latitude format"
-            return
+            self.errorMessage = "Invalid latitude format"
+            self.showingAlert = true
         }
         
         if !longitude.isEmpty && !isValidCoordinate(longitude) {
-            errorMessage = "Invalid longitude format"
-            return
+            self.errorMessage = "Invalid longitude format"
+            self.showingAlert = true
         }
         
         isSaving = true
@@ -130,7 +167,8 @@ struct AddHiveView: View {
                 )
                 
             } catch {
-                errorMessage = "Failed to create hive: \(error.localizedDescription)"
+                self.errorMessage = "Failed to create hive: \(error.localizedDescription)"
+                self.showingAlert = true
             }
         }
         
