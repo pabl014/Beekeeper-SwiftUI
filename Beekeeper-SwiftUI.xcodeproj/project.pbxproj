@@ -18,12 +18,10 @@
 		FE50AB952DBC41C300CD6E72 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB942DBC41C300CD6E72 /* UserService.swift */; };
 		FE50AB9E2DBD6ABD00CD6E72 /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50AB9D2DBD6AB900CD6E72 /* DBUser.swift */; };
 		FE50ABA32DBE889300CD6E72 /* BeeTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50ABA22DBE888800CD6E72 /* BeeTask.swift */; };
-		FE50ABAE2DBEE9DB00CD6E72 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50ABAD2DBEE9DB00CD6E72 /* EditProfileView.swift */; };
 		FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60575A2DA9C8A0004DC314 /* SettingsView.swift */; };
 		FE60576A2DAB0F23004DC314 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6057692DAB0F23004DC314 /* AuthenticationError.swift */; };
 		FE60576D2DAB13D2004DC314 /* SignInState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60576C2DAB13D2004DC314 /* SignInState.swift */; };
 		FE8DB24B2DABCFDE0026530B /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DB24A2DABCFDE0026530B /* String+Ext.swift */; };
-		FE8DB2502DABD4CB0026530B /* AnimatedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DB24F2DABD4CB0026530B /* AnimatedText.swift */; };
 		FE8DB2522DABDEF60026530B /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DB2512DABDEF60026530B /* ForgotPasswordView.swift */; };
 		FEB883DC2DE216C900D31380 /* HiveHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883DB2DE216C900D31380 /* HiveHeader.swift */; };
 		FEB883DF2DE348FB00D31380 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB883DE2DE348FB00D31380 /* HomeView.swift */; };
@@ -86,12 +84,10 @@
 		FE50AB942DBC41C300CD6E72 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		FE50AB9D2DBD6AB900CD6E72 /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
 		FE50ABA22DBE888800CD6E72 /* BeeTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeTask.swift; sourceTree = "<group>"; };
-		FE50ABAD2DBEE9DB00CD6E72 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		FE60575A2DA9C8A0004DC314 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FE6057692DAB0F23004DC314 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		FE60576C2DAB13D2004DC314 /* SignInState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInState.swift; sourceTree = "<group>"; };
 		FE8DB24A2DABCFDE0026530B /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
-		FE8DB24F2DABD4CB0026530B /* AnimatedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedText.swift; sourceTree = "<group>"; };
 		FE8DB2512DABDEF60026530B /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		FEB883DB2DE216C900D31380 /* HiveHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveHeader.swift; sourceTree = "<group>"; };
 		FEB883DE2DE348FB00D31380 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -219,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				FE6057692DAB0F23004DC314 /* AuthenticationError.swift */,
-				FE8DB24F2DABD4CB0026530B /* AnimatedText.swift */,
 				FEFA18652DD6794600C23333 /* LoadingIndicatorView.swift */,
 			);
 			path = Utils;
@@ -408,7 +403,6 @@
 			isa = PBXGroup;
 			children = (
 				FE60575A2DA9C8A0004DC314 /* SettingsView.swift */,
-				FE50ABAD2DBEE9DB00CD6E72 /* EditProfileView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -555,7 +549,6 @@
 				FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */,
 				FE50AB7E2DBAA80500CD6E72 /* View+Ext.swift in Sources */,
 				FEFA188C2DDB8AB900C23333 /* HiveDetailView.swift in Sources */,
-				FE8DB2502DABD4CB0026530B /* AnimatedText.swift in Sources */,
 				FE50AB9E2DBD6ABD00CD6E72 /* DBUser.swift in Sources */,
 				FEFA18782DD778C100C23333 /* Date+Ext.swift in Sources */,
 				FE50AB852DBBA84F00CD6E72 /* AuthDataResultModel.swift in Sources */,
@@ -574,7 +567,6 @@
 				FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */,
 				FE50AB812DBAAC2800CD6E72 /* TabBarView.swift in Sources */,
 				FEFA18622DD6381400C23333 /* TasksService.swift in Sources */,
-				FE50ABAE2DBEE9DB00CD6E72 /* EditProfileView.swift in Sources */,
 				FEFA187E2DDA0ACA00C23333 /* TransactionFilter.swift in Sources */,
 				FEFA18872DDA454A00C23333 /* TransactionsServiceProtocol.swift in Sources */,
 				FE50AB8D2DBBF6A200CD6E72 /* AuthProviderOption.swift in Sources */,

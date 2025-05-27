@@ -65,19 +65,6 @@ struct SettingsView: View {
             
             Section("Account") {
                 
-                NavigationLink(destination: EditProfileView()) {
-                    HStack(spacing: 12) {
-                        Image(systemName: "pencil.circle.fill")
-                            .imageScale(.small)
-                            .font(.title)
-                            .foregroundStyle(.orange)
-                        
-                        Text("Edit Profile")
-                            .font(.subheadline)
-                            .foregroundColor(.black)
-                    }
-                }
-                
                 Button {
                     Task {
                         await viewModel.signOut()
@@ -127,23 +114,3 @@ struct SettingsView: View {
                             )
         )
 }
-
-
-//List {
-//    Button("Log out") {
-//        Task {
-//            await viewModel.signOut()
-//            showSignInView = true
-//        }
-//    }
-//    
-//    Text(viewModel.authDataResult?.email ?? "No user logged in")
-//    Text(viewModel.authDataResult?.displayName ?? "no nickname")
-//    Text("db user id: \(viewModel.dbUser?.userId ?? "no id db")")
-//    Text("dbuser email: \(viewModel.dbUser?.email ?? "no email db")")
-//}
-//.onAppear {
-//    Task {
-//        try? await viewModel.loadCurrentUser()
-//    }
-//}
