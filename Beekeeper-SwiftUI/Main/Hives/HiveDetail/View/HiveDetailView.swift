@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HiveDetailView: View {
     
-    @StateObject private var viewModel = HiveDetailViewModel(authService: AuthenticationService(), hivesService: HivesService())
+    @StateObject private var viewModel = HiveDetailViewModel(authService: AuthenticationService(), hivesService: HivesService(), weatherManager: WeatherManager())
     
     let hiveId: String
     
@@ -74,44 +74,45 @@ struct HiveDetailView: View {
                     }
                 
                     GridRow {
-                        HiveDataCell(
-                            title: "Weather",
-                            icon: "cloud.sun.fill",
-                            iconColor: .yellow,
-                            gridCellColumns: 2
-                        ) {
-                            HStack(spacing: 20) {
-                                // Lewa strona - ID ula
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text("ID ula:")
-                                        .font(.subheadline)
-                                        .foregroundStyle(.secondary)
-                                    
-                                    Text(hive.hiveId)
-                                        .font(.title3)
-                                        .fontWeight(.semibold)
-                                        .foregroundStyle(.purple)
-                                }
-                                
-                                Divider()
-                                    .frame(height: 60)
-                                
-                                // Prawa strona - ID użytkownika
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text("ID użytkownika:")
-                                        .font(.subheadline)
-                                        .foregroundStyle(.secondary)
-                                    
-                                    Text(hive.userId)
-                                        .font(.title3)
-                                        .fontWeight(.semibold)
-                                        .foregroundStyle(.indigo)
-                                }
-                                
-                                Spacer()
-                            }
-                            .padding(.vertical, 4)
-                        }
+                        weatherCell()
+//                        HiveDataCell(
+//                            title: "Weather",
+//                            icon: "cloud.sun.fill",
+//                            iconColor: .yellow,
+//                            gridCellColumns: 2
+//                        ) {
+//                            HStack(spacing: 20) {
+//                                // Lewa strona - ID ula
+//                                VStack(alignment: .leading, spacing: 4) {
+//                                    Text("ID ula:")
+//                                        .font(.subheadline)
+//                                        .foregroundStyle(.secondary)
+//                                    
+//                                    Text(hive.hiveId)
+//                                        .font(.title3)
+//                                        .fontWeight(.semibold)
+//                                        .foregroundStyle(.purple)
+//                                }
+//                                
+//                                Divider()
+//                                    .frame(height: 60)
+//                                
+//                                // Prawa strona - ID użytkownika
+//                                VStack(alignment: .leading, spacing: 4) {
+//                                    Text("ID użytkownika:")
+//                                        .font(.subheadline)
+//                                        .foregroundStyle(.secondary)
+//                                    
+//                                    Text(hive.userId)
+//                                        .font(.title3)
+//                                        .fontWeight(.semibold)
+//                                        .foregroundStyle(.indigo)
+//                                }
+//                                
+//                                Spacer()
+//                            }
+//                            .padding(.vertical, 4)
+//                        }
                     }
                 }
                 .padding()
@@ -319,6 +320,135 @@ struct HiveDetailView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .multilineTextAlignment(.center)
             .offset(x: -10)
+        }
+    }
+    
+    func weatherCell() -> some View {
+        HiveDataCell(
+            title: "Weather",
+            icon: weatherIcon(),
+            iconColor: weatherIconColor(),
+            gridCellColumns: 2
+        ) {
+            Group {
+                if viewModel.isLoadingWeather {
+                    HStack {
+                        Spacer()
+                        ProgressView()
+                            .scaleEffect(0.8)
+                        Text("Loading weather...")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                    }
+                    .padding(.vertical, 20)
+                } else if let weather = viewModel.weather {
+                    HStack(spacing: 20) {
+                        // Left side - Temperature and description
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("\(Int(weather.main.temp.rounded()))°C")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundStyle(.primary)
+                            
+                            Text(weather.weather.first?.description.capitalized ?? "")
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                                .lineLimit(2)
+                        }
+                        
+                        Divider()
+                            .frame(height: 60)
+                        
+                        // Right side - Additional info
+                        VStack(alignment: .leading, spacing: 4) {
+                            HStack {
+                                Image(systemName: "drop.fill")
+                                    .foregroundStyle(.blue)
+                                    .font(.caption)
+                                Text("\(weather.main.humidity)%")
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            }
+                            
+                            HStack {
+                                Image(systemName: "wind")
+                                    .foregroundStyle(.gray)
+                                    .font(.caption)
+                                Text("\(Int(weather.wind.speed)) m/s")
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                        
+                        Spacer()
+                    }
+                    .padding(.vertical, 8)
+                } else {
+                    HStack {
+                        Spacer()
+                        VStack(spacing: 8) {
+                            Image(systemName: "exclamationmark.triangle")
+                                .font(.title2)
+                                .foregroundStyle(.orange)
+                            Text("Weather unavailable")
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                    }
+                    .padding(.vertical, 20)
+                }
+            }
+        }
+    }
+
+    // Add these helper functions to determine weather icon and color:
+    func weatherIcon() -> String {
+        guard let weather = viewModel.weather?.weather.first else {
+            return "cloud.sun.fill"
+        }
+        
+        let main = weather.main.lowercased()
+        switch main {
+        case "clear":
+            return "sun.max.fill"
+        case "clouds":
+            return "cloud.fill"
+        case "rain", "drizzle":
+            return "cloud.rain.fill"
+        case "thunderstorm":
+            return "cloud.bolt.fill"
+        case "snow":
+            return "cloud.snow.fill"
+        case "mist", "fog", "haze":
+            return "cloud.fog.fill"
+        default:
+            return "cloud.sun.fill"
+        }
+    }
+
+    func weatherIconColor() -> Color {
+        guard let weather = viewModel.weather?.weather.first else {
+            return .yellow
+        }
+        
+        let main = weather.main.lowercased()
+        switch main {
+        case "clear":
+            return .yellow
+        case "clouds":
+            return .gray
+        case "rain", "drizzle":
+            return .blue
+        case "thunderstorm":
+            return .purple
+        case "snow":
+            return .white
+        case "mist", "fog", "haze":
+            return .gray
+        default:
+            return .yellow
         }
     }
 }
