@@ -10,34 +10,40 @@ import FirebaseCore
 
 @main
 struct Beekeeper_SwiftUIApp: App {
-    // register app delegate for Firebase setup
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    @StateObject var authViewModel = AuthenticationViewModel(authService: AuthenticationService(), userService: UserService())
-    //@StateObject var testViewModel = TestViewModel(userService: UserService(), authService: AuthenticationService())
-    @StateObject var tasksViewModel = TasksViewModel(authService: AuthenticationService(), tasksService: TasksService())
-    @StateObject var transactionsViewModel = TransactionsViewModel(authService: AuthenticationService(), transactionsService: TransactionsService())
-    @StateObject var homeViewModel = HomeViewModel(authService: AuthenticationService(), hivesService: HivesService())
-    //@StateObject var homeDetailViewModel = HiveDetailViewModel(authService: AuthenticationService(), hivesService: HivesService())
-    
+    //@UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+
+    @StateObject var authViewModel: AuthenticationViewModel
+    @StateObject var tasksViewModel: TasksViewModel
+    @StateObject var transactionsViewModel: TransactionsViewModel
+    @StateObject var homeViewModel: HomeViewModel
+
+    init() {
+        
+        FirebaseApp.configure()
+        
+        let container = DIContainer()
+        _authViewModel = StateObject(wrappedValue: container.makeAuthViewModel())
+        _tasksViewModel = StateObject(wrappedValue: container.makeTasksViewModel())
+        _transactionsViewModel = StateObject(wrappedValue: container.makeTransactionsViewModel())
+        _homeViewModel = StateObject(wrappedValue: container.makeHomeViewModel())
+    }
+
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environmentObject(authViewModel)
-                //.environmentObject(testViewModel)
                 .environmentObject(tasksViewModel)
                 .environmentObject(transactionsViewModel)
                 .environmentObject(homeViewModel)
-                //.environmentObject(homeDetailViewModel)
-            
         }
     }
 }
 
-class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        FirebaseApp.configure()
-        print("Configured Firebase!")
-        return true
-    }
-}
+//class AppDelegate: NSObject, UIApplicationDelegate {
+//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+//        FirebaseApp.configure()
+//        print("Configured Firebase!")
+//        return true
+//    }
+//}

@@ -40,6 +40,7 @@
 		FEB884062DE64F6200D31380 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB884052DE64F6200D31380 /* WeatherManager.swift */; };
 		FEB884082DE64F9300D31380 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB884072DE64F8E00D31380 /* Secrets.swift */; };
 		FEB884102DE6612800D31380 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB8840F2DE6612400D31380 /* Weather.swift */; };
+		FEB884122DE67BC100D31380 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB884112DE67BC100D31380 /* DIContainer.swift */; };
 		FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE15782DA1C49D00DC4D17 /* RootView.swift */; };
 		FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */; };
 		FEED69C12D96CC7900F7A171 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FEED69C02D96CC7900F7A171 /* FirebaseAnalytics */; };
@@ -109,6 +110,7 @@
 		FEB884052DE64F6200D31380 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		FEB884072DE64F8E00D31380 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		FEB8840F2DE6612400D31380 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		FEB884112DE67BC100D31380 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		FEDE15782DA1C49D00DC4D17 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailView.swift; sourceTree = "<group>"; };
 		FEED69AC2D96BCBB00F7A171 /* Beekeeper-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beekeeper-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -366,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				FE50AB8B2DBBB22C00CD6E72 /* Info.plist */,
+				FEB884112DE67BC100D31380 /* DIContainer.swift */,
 				FEED69CD2D96E15E00F7A171 /* Beekeeper_SwiftUIApp.swift */,
 				FEDE15782DA1C49D00DC4D17 /* RootView.swift */,
 				FE50AB832DBBA83500CD6E72 /* Models */,
@@ -581,6 +584,7 @@
 				FEFA187E2DDA0ACA00C23333 /* TransactionFilter.swift in Sources */,
 				FEFA18872DDA454A00C23333 /* TransactionsServiceProtocol.swift in Sources */,
 				FE50AB8D2DBBF6A200CD6E72 /* AuthProviderOption.swift in Sources */,
+				FEB884122DE67BC100D31380 /* DIContainer.swift in Sources */,
 				FEED69D12D96E15E00F7A171 /* AuthenticationView.swift in Sources */,
 				FEFA18742DD76A9600C23333 /* TransactionRowCell.swift in Sources */,
 				FEB883F82DE4D7FA00D31380 /* HiveDataCell.swift in Sources */,
