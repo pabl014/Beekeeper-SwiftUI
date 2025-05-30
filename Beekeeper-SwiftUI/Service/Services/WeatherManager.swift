@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol WeatherManagerProtocol {
-    func getWeatherForLocation(lat: Double, lon: Double) async throws -> WeatherResponse
-}
-
 final class WeatherManager: WeatherManagerProtocol {
     
     // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}

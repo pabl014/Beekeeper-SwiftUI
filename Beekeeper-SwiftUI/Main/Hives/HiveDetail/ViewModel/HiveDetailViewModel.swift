@@ -57,4 +57,43 @@ final class HiveDetailViewModel: ObservableObject {
         }
         isLoadingWeather = false
     }
+    
+    func editHive(
+            name: String,
+            framesNumber: Int,
+            healthState: HealthState,
+            motherState: MotherState,
+            lastFeedDate: Date,
+            lastFeedAmount: Double,
+            address: String,
+            latitude: String,
+            longitude: String
+    ) async throws {
+       
+       guard let hive else {
+            return
+       }
+        
+        // Convert string coordinates to Double
+        let lat = Double(latitude) ?? 0.0
+        let lng = Double(longitude) ?? 0.0
+        
+        let updatedHive = Hive(
+            hiveId: hive.hiveId,
+            userId: hive.userId,
+            name: name,
+            photoUrl: hive.photoUrl,
+            estDate: hive.estDate,
+            framesNumber: framesNumber,
+            healthState: healthState.rawValue,
+            motherState: motherState.rawValue,
+            lastFeedDate: lastFeedDate,
+            lastFeedAmount: lastFeedAmount,
+            address: address,
+            latitude: lat,
+            longitude: lng
+        )
+        
+        try await hivesService.editHive(updatedHive)
+    }
 }

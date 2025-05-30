@@ -41,6 +41,8 @@
 		FEB884082DE64F9300D31380 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB884072DE64F8E00D31380 /* Secrets.swift */; };
 		FEB884102DE6612800D31380 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB8840F2DE6612400D31380 /* Weather.swift */; };
 		FEB884122DE67BC100D31380 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB884112DE67BC100D31380 /* DIContainer.swift */; };
+		FEB884142DE9FBD900D31380 /* WeatherManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB884132DE9FBD000D31380 /* WeatherManagerProtocol.swift */; };
+		FEB884162DEA006B00D31380 /* EditHiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB884152DEA006B00D31380 /* EditHiveView.swift */; };
 		FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE15782DA1C49D00DC4D17 /* RootView.swift */; };
 		FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */; };
 		FEED69C12D96CC7900F7A171 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FEED69C02D96CC7900F7A171 /* FirebaseAnalytics */; };
@@ -111,6 +113,8 @@
 		FEB884072DE64F8E00D31380 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		FEB8840F2DE6612400D31380 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		FEB884112DE67BC100D31380 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		FEB884132DE9FBD000D31380 /* WeatherManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManagerProtocol.swift; sourceTree = "<group>"; };
+		FEB884152DEA006B00D31380 /* EditHiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHiveView.swift; sourceTree = "<group>"; };
 		FEDE15782DA1C49D00DC4D17 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailView.swift; sourceTree = "<group>"; };
 		FEED69AC2D96BCBB00F7A171 /* Beekeeper-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beekeeper-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -328,6 +332,7 @@
 				FEFA18972DDB9B6E00C23333 /* ExpandableMapView.swift */,
 				FEB883DB2DE216C900D31380 /* HiveHeader.swift */,
 				FEB883F72DE4D7FA00D31380 /* HiveDataCell.swift */,
+				FEB884152DEA006B00D31380 /* EditHiveView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 				FEFA18842DDA451900C23333 /* TasksServiceProtocol.swift */,
 				FEFA18822DDA44F400C23333 /* UserServiceProtocol.swift */,
 				FEFA18802DDA44CD00C23333 /* AuthServiceProtocol.swift */,
+				FEB884132DE9FBD000D31380 /* WeatherManagerProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -556,6 +562,7 @@
 				FEB883EA2DE3C0AB00D31380 /* MapViewForHives.swift in Sources */,
 				FEB884102DE6612800D31380 /* Weather.swift in Sources */,
 				FEFA18642DD652AE00C23333 /* AddTaskView.swift in Sources */,
+				FEB884162DEA006B00D31380 /* EditHiveView.swift in Sources */,
 				FEFA186A2DD7579400C23333 /* TransactionsView.swift in Sources */,
 				FEB883EC2DE3C9A700D31380 /* HivesListView.swift in Sources */,
 				FEFA18662DD6794600C23333 /* LoadingIndicatorView.swift in Sources */,
@@ -576,6 +583,7 @@
 				FEB884062DE64F6200D31380 /* WeatherManager.swift in Sources */,
 				FEB883DC2DE216C900D31380 /* HiveHeader.swift in Sources */,
 				FEFA18832DDA44FC00C23333 /* UserServiceProtocol.swift in Sources */,
+				FEB884142DE9FBD900D31380 /* WeatherManagerProtocol.swift in Sources */,
 				FEB883E72DE3A7A800D31380 /* LocationModel.swift in Sources */,
 				FE50AB952DBC41C300CD6E72 /* UserService.swift in Sources */,
 				FE60575B2DA9C8A0004DC314 /* SettingsView.swift in Sources */,

@@ -1,20 +1,21 @@
 //
-//  AddHiveView.swift
+//  EditHiveView.swift
 //  Beekeeper-SwiftUI
 //
-//  Created by Paweł Rudnik on 26/05/2025.
+//  Created by Paweł Rudnik on 30/05/2025.
 //
 
 import SwiftUI
 
-struct AddHiveView: View {
+struct EditHiveView: View {
     
-    @EnvironmentObject var viewModel: HomeViewModel
-    @StateObject private var locationManager = LocationManager()
+    let hive: Hive
+    
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var viewModel: HiveDetailViewModel
+    @StateObject private var locationManager = LocationManager()
     
     @State private var name: String = ""
-    @State private var estDate: Date = .now
     @State private var framesNumber: Int = 10
     @State private var healthState: HealthState = .good
     @State private var motherState: MotherState = .new
@@ -38,8 +39,6 @@ struct AddHiveView: View {
                 Section(header: Text("Hive Info")) {
                     TextField("Name", text: $name)
                     
-                    DatePicker("Established Date", selection: $estDate, in: ...Date.now, displayedComponents: .date)
-
                     Stepper("Frames: \(framesNumber)", value: $framesNumber, in: 1...20)
                 }
                 
@@ -49,6 +48,7 @@ struct AddHiveView: View {
                             Text(state.displayName).tag(state)
                         }
                     }
+                    
                     
                     Picker("Queen State", selection: $motherState) {
                         ForEach(MotherState.allCases) { state in
@@ -77,21 +77,20 @@ struct AddHiveView: View {
                         .onChange(of: longitude) { _, newValue in
                             longitude = formatDecimalInput(newValue)
                         }
-                }
-                
-                if let locationError = locationManager.errorMessage {
-                    Text(locationError)
-                        .foregroundColor(.red)
+                    
+                    Button("Get your current location") {
+                        loadCurrentLocation()
+                    }
                 }
             }
-            .navigationTitle("Add Hive")
+            .navigationTitle("Edit Hive")
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     if isSaving {
                         ProgressView()
                     } else {
-                        Button("Create Hive") {
-                            createHive()
+                        Button("Done") {
+                            editHive()
                             dismiss()
                         }
                         .disabled(name.isEmpty || address.isEmpty)
@@ -104,18 +103,25 @@ struct AddHiveView: View {
                     }
                 }
             }
-            .alert("Error", isPresented: $showingAlert) {
-                Button("OK", role: .cancel) { }
-            } message: {
-                Text(combinedErrorMessage ?? "Something went wrong.")
-            }
             .onAppear {
-                loadCurrentLocation()
+                populateFields()
             }
             .onDisappear {
                 locationManager.stopLocationUpdates()
             }
         }
+    }
+    
+    private func populateFields() {
+        name = hive.name
+        framesNumber = hive.framesNumber
+        healthState = HealthState(rawValue: hive.healthState) ?? .good
+        motherState = MotherState(rawValue: hive.motherState) ?? .new
+        lastFeedDate = hive.lastFeedDate
+        lastFeedAmount = hive.lastFeedAmount
+        address = hive.address
+        latitude = String(format: "%.6f", hive.latitude)
+        longitude = String(format: "%.6f", hive.longitude)
     }
     
     private func loadCurrentLocation() {
@@ -133,44 +139,6 @@ struct AddHiveView: View {
                 }
             }
         }
-    }
-    
-    private func createHive() {
-        
-        if !latitude.isEmpty && !isValidCoordinate(latitude) {
-            self.errorMessage = "Invalid latitude format"
-            self.showingAlert = true
-        }
-        
-        if !longitude.isEmpty && !isValidCoordinate(longitude) {
-            self.errorMessage = "Invalid longitude format"
-            self.showingAlert = true
-        }
-        
-        isSaving = true
-        
-        Task {
-            do {
-                try await viewModel.addHive(
-                    name: name.trimmingCharacters(in: .whitespacesAndNewlines),
-                    estDate: estDate,
-                    framesNumber: framesNumber,
-                    healthState: healthState,
-                    motherState: motherState,
-                    lastFeedDate: lastFeedDate,
-                    lastFeedAmount: lastFeedAmount,
-                    address: address,
-                    latitude: latitude,
-                    longitude: longitude
-                )
-                
-            } catch {
-                self.errorMessage = "Failed to create hive: \(error.localizedDescription)"
-                self.showingAlert = true
-            }
-        }
-        
-        isSaving = false
     }
     
     private func isValidCoordinate(_ coordinate: String) -> Bool {
@@ -194,10 +162,45 @@ struct AddHiveView: View {
         // Replace comma with dot for consistent decimal format
         return input.replacingOccurrences(of: ",", with: ".")
     }
+    
+    private func editHive() {
+        
+        if !latitude.isEmpty && !isValidCoordinate(latitude) {
+            self.errorMessage = "Invalid latitude format"
+            self.showingAlert = true
+        }
+        
+        if !longitude.isEmpty && !isValidCoordinate(longitude) {
+            self.errorMessage = "Invalid longitude format"
+            self.showingAlert = true
+        }
+        
+        isSaving = true
+        
+        Task {
+            do {
+                try await viewModel.editHive(
+                    name: name.trimmingCharacters(in: .whitespacesAndNewlines),
+                    framesNumber: framesNumber,
+                    healthState: healthState,
+                    motherState: motherState,
+                    lastFeedDate: lastFeedDate,
+                    lastFeedAmount: lastFeedAmount,
+                    address: address,
+                    latitude: latitude,
+                    longitude: longitude
+                )
+                
+            } catch {
+                self.errorMessage = "Failed to create hive: \(error.localizedDescription)"
+                self.showingAlert = true
+            }
+        }
+        
+        isSaving = false
+    }
 }
 
 #Preview {
-    NavigationStack {
-        AddHiveView()
-    }
+    EditHiveView(hive: Hive.mock1)
 }

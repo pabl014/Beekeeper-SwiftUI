@@ -13,6 +13,8 @@ struct HiveDetailView: View {
     
     let hiveId: String
     
+    @State private var isEditingHive = false
+    
     var body: some View {
         
         Group {
@@ -32,13 +34,40 @@ struct HiveDetailView: View {
         .navigationTitle("Hive Details")
         .navigationBarTitleDisplayMode(.inline)
         .task {
-            // Jeśli nie mamy danych, załaduj je
             if viewModel.hive == nil {
                 await viewModel.loadHive(id: hiveId)
             }
         }
         .refreshable {
             await viewModel.loadHive(id: hiveId)
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    isEditingHive = true
+                } label: {
+                    HStack {
+                        Image(systemName: "pencil")
+                        Text("Edit hive")
+                            .fontWeight(.bold)
+                            .foregroundColor(.orange)
+                    }
+                }
+            }
+        }
+        .sheet(isPresented: $isEditingHive) {
+            if let hive = viewModel.hive {
+                EditHiveView(hive: hive)
+                    .environmentObject(viewModel)
+            }
+        }
+        .onChange(of: isEditingHive) { _, newValue in
+            // Refresh data when edit sheet is dismissed
+            if !newValue {
+                Task {
+                    await viewModel.loadHive(id: hiveId)
+                }
+            }
         }
     }
         
@@ -78,21 +107,6 @@ struct HiveDetailView: View {
                     }
                 }
                 .padding()
-                
-                // Przycisk akcji
-                Button(action: {
-                    // Akcja do wykonania
-                }) {
-                    Text("Edytuj dane ula")
-                        .font(.headline)
-                        .foregroundStyle(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(15)
-                }
-                .padding(.horizontal)
-                .padding(.bottom, 20)
             }
         }
         .navigationTitle("Hive details")
