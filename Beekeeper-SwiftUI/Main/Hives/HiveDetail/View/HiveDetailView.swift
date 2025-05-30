@@ -292,10 +292,9 @@ struct HiveDetailView: View {
         }
     }
 
-    
     func weatherCell() -> some View {
         HiveDataCell(
-            title: "Weather",
+            title: "Weather & Recommendations",
             icon: weatherIcon(),
             iconColor: weatherIconColor(),
             gridCellColumns: 2
@@ -313,47 +312,50 @@ struct HiveDetailView: View {
                     }
                     .padding(.vertical, 20)
                 } else if let weather = viewModel.weather {
-                    HStack(spacing: 20) {
-                        // Left side - Temperature and description
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("\(Int(weather.main.temp.rounded()))°C")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundStyle(.primary)
-                            
-                            Text(weather.weather.first?.description.capitalized ?? "")
-                                .font(.subheadline)
-                                .foregroundStyle(.secondary)
-                                .lineLimit(2)
-                        }
-                        
-                        Divider()
-                            .frame(height: 60)
-                        
-                        // Right side - Additional info
-                        VStack(alignment: .leading, spacing: 4) {
-                            HStack {
-                                Image(systemName: "drop.fill")
-                                    .foregroundStyle(.blue)
-                                    .font(.caption)
-                                Text("\(weather.main.humidity)%")
+                    VStack(spacing: 16) {
+                        HStack(spacing: 20) {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text("\(Int(weather.main.temp.rounded()))°C")
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(.primary)
+                                
+                                Text(weather.weather.first?.description.capitalized ?? "")
                                     .font(.subheadline)
                                     .foregroundStyle(.secondary)
+                                    .lineLimit(2)
                             }
                             
-                            HStack {
-                                Image(systemName: "wind")
-                                    .foregroundStyle(.gray)
-                                    .font(.caption)
-                                Text("\(Int(weather.wind.speed)) m/s")
-                                    .font(.subheadline)
-                                    .foregroundStyle(.secondary)
+                            Divider()
+                                .frame(height: 60)
+                            
+                            VStack(alignment: .leading, spacing: 4) {
+                                HStack {
+                                    Image(systemName: "drop.fill")
+                                        .foregroundStyle(.blue)
+                                        .font(.caption)
+                                    Text("\(weather.main.humidity)%")
+                                        .font(.subheadline)
+                                        .foregroundStyle(.secondary)
+                                }
+                                
+                                HStack {
+                                    Image(systemName: "wind")
+                                        .foregroundStyle(.gray)
+                                        .font(.caption)
+                                    Text("\(Int(weather.wind.speed)) m/s")
+                                        .font(.subheadline)
+                                        .foregroundStyle(.secondary)
+                                }
                             }
+                            
+                            Spacer()
                         }
+                        .padding(.vertical, 8)
                         
-                        Spacer()
+                        let recommendation = WeatherRecommendationService.getRecommendation(for: weather)
+                        WeatherRecommendationView(recommendation: recommendation)
                     }
-                    .padding(.vertical, 8)
                 } else {
                     HStack {
                         Spacer()
@@ -372,8 +374,7 @@ struct HiveDetailView: View {
             }
         }
     }
-
-    // Add these helper functions to determine weather icon and color:
+    
     func weatherIcon() -> String {
         guard let weather = viewModel.weather?.weather.first else {
             return "cloud.sun.fill"

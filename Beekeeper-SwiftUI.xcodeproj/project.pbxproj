@@ -43,6 +43,9 @@
 		FEB884122DE67BC100D31380 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB884112DE67BC100D31380 /* DIContainer.swift */; };
 		FEB884142DE9FBD900D31380 /* WeatherManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB884132DE9FBD000D31380 /* WeatherManagerProtocol.swift */; };
 		FEB884162DEA006B00D31380 /* EditHiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB884152DEA006B00D31380 /* EditHiveView.swift */; };
+		FEB884182DEA3B3B00D31380 /* WeatherRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB884172DEA3B3200D31380 /* WeatherRecommendation.swift */; };
+		FEB8841A2DEA3C1D00D31380 /* WeatherRecommendationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB884192DEA3C1500D31380 /* WeatherRecommendationService.swift */; };
+		FEB8841C2DEA3C7E00D31380 /* WeatherRecommandationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB8841B2DEA3C7300D31380 /* WeatherRecommandationView.swift */; };
 		FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE15782DA1C49D00DC4D17 /* RootView.swift */; };
 		FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */; };
 		FEED69C12D96CC7900F7A171 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FEED69C02D96CC7900F7A171 /* FirebaseAnalytics */; };
@@ -115,6 +118,9 @@
 		FEB884112DE67BC100D31380 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		FEB884132DE9FBD000D31380 /* WeatherManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManagerProtocol.swift; sourceTree = "<group>"; };
 		FEB884152DEA006B00D31380 /* EditHiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHiveView.swift; sourceTree = "<group>"; };
+		FEB884172DEA3B3200D31380 /* WeatherRecommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRecommendation.swift; sourceTree = "<group>"; };
+		FEB884192DEA3C1500D31380 /* WeatherRecommendationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRecommendationService.swift; sourceTree = "<group>"; };
+		FEB8841B2DEA3C7300D31380 /* WeatherRecommandationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRecommandationView.swift; sourceTree = "<group>"; };
 		FEDE15782DA1C49D00DC4D17 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailView.swift; sourceTree = "<group>"; };
 		FEED69AC2D96BCBB00F7A171 /* Beekeeper-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beekeeper-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +196,7 @@
 		FE50AB832DBBA83500CD6E72 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FEB884172DEA3B3200D31380 /* WeatherRecommendation.swift */,
 				FEB8840F2DE6612400D31380 /* Weather.swift */,
 				FE50AB9D2DBD6AB900CD6E72 /* DBUser.swift */,
 				FE50AB842DBBA84F00CD6E72 /* AuthDataResultModel.swift */,
@@ -306,6 +313,7 @@
 		FEB883E82DE3A9A600D31380 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FEB884192DEA3C1500D31380 /* WeatherRecommendationService.swift */,
 				FEED69DF2D96E9AD00F7A171 /* AuthenticationService.swift */,
 				FE50AB942DBC41C300CD6E72 /* UserService.swift */,
 				FEFA18612DD6381400C23333 /* TasksService.swift */,
@@ -328,6 +336,7 @@
 		FEB883F42DE4BDDC00D31380 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FEB8841B2DEA3C7300D31380 /* WeatherRecommandationView.swift */,
 				FEFA188B2DDB8AB900C23333 /* HiveDetailView.swift */,
 				FEFA18972DDB9B6E00C23333 /* ExpandableMapView.swift */,
 				FEB883DB2DE216C900D31380 /* HiveHeader.swift */,
@@ -579,6 +588,7 @@
 				FEFA187A2DD9F70C00C23333 /* AllTransactionsView.swift in Sources */,
 				FEFA18592DD618A100C23333 /* TasksView.swift in Sources */,
 				FEB883E52DE34A7600D31380 /* HivesService.swift in Sources */,
+				FEB8841A2DEA3C1D00D31380 /* WeatherRecommendationService.swift in Sources */,
 				FEFA187C2DD9F77400C23333 /* AddTransactionView.swift in Sources */,
 				FEB884062DE64F6200D31380 /* WeatherManager.swift in Sources */,
 				FEB883DC2DE216C900D31380 /* HiveHeader.swift in Sources */,
@@ -601,6 +611,7 @@
 				FE50AB7C2DBAA41900CD6E72 /* HiveCardView.swift in Sources */,
 				FEFA186E2DD75E7200C23333 /* TransactionModel.swift in Sources */,
 				FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */,
+				FEB8841C2DEA3C7E00D31380 /* WeatherRecommandationView.swift in Sources */,
 				FEFA18812DDA44D600C23333 /* AuthServiceProtocol.swift in Sources */,
 				FEED69E02D96E9AD00F7A171 /* AuthenticationService.swift in Sources */,
 				FEB883F22DE3D69100D31380 /* AddHiveView.swift in Sources */,
@@ -615,6 +626,7 @@
 				FEFA18762DD778AB00C23333 /* Double+Ext.swift in Sources */,
 				FEED69D82D96E56300F7A171 /* SignInWithEmailView.swift in Sources */,
 				FEB884042DE61C9200D31380 /* LocationManager.swift in Sources */,
+				FEB884182DEA3B3B00D31380 /* WeatherRecommendation.swift in Sources */,
 				FE60576D2DAB13D2004DC314 /* SignInState.swift in Sources */,
 				FE60576A2DAB0F23004DC314 /* AuthenticationError.swift in Sources */,
 				FEFA18982DDB9B6E00C23333 /* ExpandableMapView.swift in Sources */,
