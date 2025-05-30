@@ -55,7 +55,4 @@ struct TabBarView: View {
                                 authService: AuthenticationService()
                             )
         )
-//        .environmentObject(
-//            TestViewModel(userService: UserService(), authService: AuthenticationService())
-//        )
 }

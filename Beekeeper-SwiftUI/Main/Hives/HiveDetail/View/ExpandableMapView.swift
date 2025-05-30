@@ -53,7 +53,7 @@ struct MapViewForOneHive: View {
     let latitude: Double
     let longitude: Double
     
-    @State private var cameraPosition: MapCameraPosition = .automatic //.region(.countryRegion)
+    @State private var cameraPosition: MapCameraPosition = .automatic
     
     var body: some View {
         Map(position: $cameraPosition) {

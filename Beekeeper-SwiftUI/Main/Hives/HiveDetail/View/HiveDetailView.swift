@@ -75,44 +75,6 @@ struct HiveDetailView: View {
                 
                     GridRow {
                         weatherCell()
-//                        HiveDataCell(
-//                            title: "Weather",
-//                            icon: "cloud.sun.fill",
-//                            iconColor: .yellow,
-//                            gridCellColumns: 2
-//                        ) {
-//                            HStack(spacing: 20) {
-//                                // Lewa strona - ID ula
-//                                VStack(alignment: .leading, spacing: 4) {
-//                                    Text("ID ula:")
-//                                        .font(.subheadline)
-//                                        .foregroundStyle(.secondary)
-//                                    
-//                                    Text(hive.hiveId)
-//                                        .font(.title3)
-//                                        .fontWeight(.semibold)
-//                                        .foregroundStyle(.purple)
-//                                }
-//                                
-//                                Divider()
-//                                    .frame(height: 60)
-//                                
-//                                // Prawa strona - ID użytkownika
-//                                VStack(alignment: .leading, spacing: 4) {
-//                                    Text("ID użytkownika:")
-//                                        .font(.subheadline)
-//                                        .foregroundStyle(.secondary)
-//                                    
-//                                    Text(hive.userId)
-//                                        .font(.title3)
-//                                        .fontWeight(.semibold)
-//                                        .foregroundStyle(.indigo)
-//                                }
-//                                
-//                                Spacer()
-//                            }
-//                            .padding(.vertical, 4)
-//                        }
                     }
                 }
                 .padding()
@@ -452,25 +414,6 @@ struct HiveDetailView: View {
         }
     }
 }
-
-//#Preview {
-//    NavigationStack {
-//        Hive2DetailView(hive: Hive(
-//            hiveId: "H-12345",
-//            userId: "USR-789",
-//            name: "Pszczółka Maja",
-//            photoUrl: "https://picsum.photos/300/300",
-//            estDate: Calendar.current.date(byAdding: .day, value: -90, to: Date())!,
-//            framesNumber: 10,
-//            healthState: "Dobry",
-//            motherState: "Aktywna",
-//            lastFeedDate: Calendar.current.date(byAdding: .day, value: -5, to: Date())!,
-//            lastFeedAmount: 2.5,
-//            address: "ul. Kwiatowa 15, Pszczelin",
-//            location: Location(latitude: 53.232222, longitude: 21.008333)
-//        ))
-//    }
-//}
 
 
 

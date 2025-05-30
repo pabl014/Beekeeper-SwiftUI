@@ -23,7 +23,6 @@ struct HiveHeader: View {
                     .frame(height: 250)
                     .cornerRadius(20)
             } else {
-                // Jeśli imageUrl nie jest pusty, ładowanie obrazu
                 if let url = URL(string: imageUrl) {
                     AsyncImage(url: url) { image in
                         image
@@ -77,7 +76,7 @@ struct HiveHeader: View {
 
 #Preview {
     HiveHeader(
-        imageUrl: "https://images.unsplash.com/photo-1587300003388-59208cc962cb", // przykładowe zdjęcie ula z Unsplash
+        imageUrl: "https://images.unsplash.com/photo-1587300003388-59208cc962cb",
         estDate: Calendar.current.date(byAdding: .day, value: -123, to: Date()) ?? Date(),
         name: "Ul pod lasem",
         address: "Leśna 14, 43-200 Pszczyna"
