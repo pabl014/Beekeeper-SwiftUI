@@ -12,6 +12,7 @@ protocol HivesServiceProtocol {
     func fetchHives(for userId: String) async throws -> [Hive]
     func getHive(hiveId: String) async throws -> Hive
     func addHive(_ hive: Hive) async throws
+    func deleteHive(hiveId: String) async throws
 }
 
 final class HivesService: HivesServiceProtocol {
@@ -72,6 +73,12 @@ final class HivesService: HivesServiceProtocol {
         )
         
         try documentRef.setData(from: hiveWithId, encoder: encoder)
+    }
+    
+    func deleteHive(hiveId: String) async throws {
+        try await db.collection(hivesCollection)
+            .document(hiveId)
+            .delete()
     }
 }
 

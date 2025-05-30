@@ -89,4 +89,18 @@ final class HomeViewModel: ObservableObject {
         // Reload hives to reflect the new addition
         await loadHives()
     }
+    
+    func deleteHive(_ hive: Hive) async {
+        do {
+            try await hivesService.deleteHive(hiveId: hive.hiveId)
+            
+            if let index = hivesArray.firstIndex(where: { $0.hiveId == hive.hiveId }) {
+                hivesArray.remove(at: index)
+            }
+            await loadHives()
+        } catch {
+            errorMessage = "Failed to delete hive: \(error.localizedDescription)"
+            print("Error deleting hive: \(error)")
+        }
+    }
 }
