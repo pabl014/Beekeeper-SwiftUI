@@ -247,11 +247,9 @@ struct HiveDetailView: View {
             iconColor: .cyan,
             gridCellColumns: 2
         ) {
-            HStack(spacing: 32) {
-                Spacer()
+            HStack(alignment: .top, spacing: 20) {
                 
                 VStack(alignment: .leading, spacing: 6) {
-                    
                     Text(hive.lastFeedDate.asShortDate)
                         .font(.body)
                         .fontWeight(.semibold)
@@ -263,7 +261,7 @@ struct HiveDetailView: View {
                 }
                 
                 Divider()
-                    .frame(height: 70)
+                    .frame(height: 60)
                 
                 VStack(alignment: .leading, spacing: 6) {
                     Text("Amount:")
@@ -275,15 +273,11 @@ struct HiveDetailView: View {
                         .fontWeight(.semibold)
                         .foregroundStyle(.cyan)
                 }
-                
-                Spacer()
             }
             .padding(.vertical, 8)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .multilineTextAlignment(.center)
-            .offset(x: -10)
         }
     }
+
     
     func weatherCell() -> some View {
         HiveDataCell(
