@@ -46,6 +46,7 @@
 		FEB884182DEA3B3B00D31380 /* WeatherRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB884172DEA3B3200D31380 /* WeatherRecommendation.swift */; };
 		FEB8841A2DEA3C1D00D31380 /* WeatherRecommendationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB884192DEA3C1500D31380 /* WeatherRecommendationService.swift */; };
 		FEB8841C2DEA3C7E00D31380 /* WeatherRecommandationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB8841B2DEA3C7300D31380 /* WeatherRecommandationView.swift */; };
+		FEB8841E2DEA42E900D31380 /* HivesServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB8841D2DEA42E100D31380 /* HivesServiceProtocol.swift */; };
 		FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE15782DA1C49D00DC4D17 /* RootView.swift */; };
 		FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */; };
 		FEED69C12D96CC7900F7A171 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FEED69C02D96CC7900F7A171 /* FirebaseAnalytics */; };
@@ -121,6 +122,7 @@
 		FEB884172DEA3B3200D31380 /* WeatherRecommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRecommendation.swift; sourceTree = "<group>"; };
 		FEB884192DEA3C1500D31380 /* WeatherRecommendationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRecommendationService.swift; sourceTree = "<group>"; };
 		FEB8841B2DEA3C7300D31380 /* WeatherRecommandationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRecommandationView.swift; sourceTree = "<group>"; };
+		FEB8841D2DEA42E100D31380 /* HivesServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HivesServiceProtocol.swift; sourceTree = "<group>"; };
 		FEDE15782DA1C49D00DC4D17 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailView.swift; sourceTree = "<group>"; };
 		FEED69AC2D96BCBB00F7A171 /* Beekeeper-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beekeeper-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -464,6 +466,7 @@
 		FEFA187F2DDA449E00C23333 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				FEB8841D2DEA42E100D31380 /* HivesServiceProtocol.swift */,
 				FEFA18862DDA454000C23333 /* TransactionsServiceProtocol.swift */,
 				FEFA18842DDA451900C23333 /* TasksServiceProtocol.swift */,
 				FEFA18822DDA44F400C23333 /* UserServiceProtocol.swift */,
@@ -623,6 +626,7 @@
 				FE8DB2522DABDEF60026530B /* ForgotPasswordView.swift in Sources */,
 				FEB884082DE64F9300D31380 /* Secrets.swift in Sources */,
 				FEB883FC2DE4FA8C00D31380 /* HealthState.swift in Sources */,
+				FEB8841E2DEA42E900D31380 /* HivesServiceProtocol.swift in Sources */,
 				FEFA18762DD778AB00C23333 /* Double+Ext.swift in Sources */,
 				FEED69D82D96E56300F7A171 /* SignInWithEmailView.swift in Sources */,
 				FEB884042DE61C9200D31380 /* LocationManager.swift in Sources */,
