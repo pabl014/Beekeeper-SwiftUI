@@ -49,6 +49,10 @@
 		FEB8841E2DEA42E900D31380 /* HivesServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB8841D2DEA42E100D31380 /* HivesServiceProtocol.swift */; };
 		FEDE15792DA1C49D00DC4D17 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE15782DA1C49D00DC4D17 /* RootView.swift */; };
 		FEDE157D2DA1C8B800DC4D17 /* SignUpWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */; };
+		FEE080452DFC3348001A3B28 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FEE080442DFC3348001A3B28 /* FirebaseStorage */; };
+		FEE080472DFC39E4001A3B28 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE080462DFC39E4001A3B28 /* StorageService.swift */; };
+		FEE080492DFC52B3001A3B28 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE080482DFC52AC001A3B28 /* ImagePickerView.swift */; };
+		FEE0804B2DFC616A001A3B28 /* StorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE0804A2DFC6164001A3B28 /* StorageServiceProtocol.swift */; };
 		FEED69C12D96CC7900F7A171 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FEED69C02D96CC7900F7A171 /* FirebaseAnalytics */; };
 		FEED69C42D96E00700F7A171 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FEED69C32D96E00700F7A171 /* FirebaseAuth */; };
 		FEED69D12D96E15E00F7A171 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEED69CC2D96E15E00F7A171 /* AuthenticationView.swift */; };
@@ -125,6 +129,9 @@
 		FEB8841D2DEA42E100D31380 /* HivesServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HivesServiceProtocol.swift; sourceTree = "<group>"; };
 		FEDE15782DA1C49D00DC4D17 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FEDE157C2DA1C8B800DC4D17 /* SignUpWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailView.swift; sourceTree = "<group>"; };
+		FEE080462DFC39E4001A3B28 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		FEE080482DFC52AC001A3B28 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		FEE0804A2DFC6164001A3B28 /* StorageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceProtocol.swift; sourceTree = "<group>"; };
 		FEED69AC2D96BCBB00F7A171 /* Beekeeper-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beekeeper-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEED69C92D96E15E00F7A171 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FEED69CB2D96E15E00F7A171 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,6 +176,7 @@
 				FE50AB882DBBB1D900CD6E72 /* GoogleSignIn in Frameworks */,
 				FE50AB932DBC3B9E00CD6E72 /* FirebaseFirestore in Frameworks */,
 				FE50AB8A2DBBB1D900CD6E72 /* GoogleSignInSwift in Frameworks */,
+				FEE080452DFC3348001A3B28 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +316,7 @@
 				FEB883EB2DE3C9A700D31380 /* HivesListView.swift */,
 				FEB883ED2DE3CC8D00D31380 /* HiveListCell.swift */,
 				FEB883F12DE3D69100D31380 /* AddHiveView.swift */,
+				FEE080482DFC52AC001A3B28 /* ImagePickerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -323,6 +332,7 @@
 				FEB883E42DE34A7600D31380 /* HivesService.swift */,
 				FEB884032DE61C9200D31380 /* LocationManager.swift */,
 				FEB884052DE64F6200D31380 /* WeatherManager.swift */,
+				FEE080462DFC39E4001A3B28 /* StorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -466,6 +476,7 @@
 		FEFA187F2DDA449E00C23333 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				FEE0804A2DFC6164001A3B28 /* StorageServiceProtocol.swift */,
 				FEB8841D2DEA42E100D31380 /* HivesServiceProtocol.swift */,
 				FEFA18862DDA454000C23333 /* TransactionsServiceProtocol.swift */,
 				FEFA18842DDA451900C23333 /* TasksServiceProtocol.swift */,
@@ -507,6 +518,7 @@
 				FE50AB872DBBB1D900CD6E72 /* GoogleSignIn */,
 				FE50AB892DBBB1D900CD6E72 /* GoogleSignInSwift */,
 				FE50AB922DBC3B9E00CD6E72 /* FirebaseFirestore */,
+				FEE080442DFC3348001A3B28 /* FirebaseStorage */,
 			);
 			productName = "Beekeeper-SwiftUI";
 			productReference = FEED69AC2D96BCBB00F7A171 /* Beekeeper-SwiftUI.app */;
@@ -569,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEFA18722DD7614400C23333 /* TransactionsViewModel.swift in Sources */,
+				FEE080492DFC52B3001A3B28 /* ImagePickerView.swift in Sources */,
 				FEFA18702DD760E600C23333 /* TransactionsService.swift in Sources */,
 				FEFA18602DD637D000C23333 /* TasksViewModel.swift in Sources */,
 				FEB883EA2DE3C0AB00D31380 /* MapViewForHives.swift in Sources */,
@@ -626,6 +639,8 @@
 				FE8DB2522DABDEF60026530B /* ForgotPasswordView.swift in Sources */,
 				FEB884082DE64F9300D31380 /* Secrets.swift in Sources */,
 				FEB883FC2DE4FA8C00D31380 /* HealthState.swift in Sources */,
+				FEE0804B2DFC616A001A3B28 /* StorageServiceProtocol.swift in Sources */,
+				FEE080472DFC39E4001A3B28 /* StorageService.swift in Sources */,
 				FEB8841E2DEA42E900D31380 /* HivesServiceProtocol.swift in Sources */,
 				FEFA18762DD778AB00C23333 /* Double+Ext.swift in Sources */,
 				FEED69D82D96E56300F7A171 /* SignInWithEmailView.swift in Sources */,
@@ -877,6 +892,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FEED69BF2D96CC7900F7A171 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		FEE080442DFC3348001A3B28 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEED69BF2D96CC7900F7A171 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 		FEED69C02D96CC7900F7A171 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -11,7 +11,7 @@ struct Hive: Codable, Identifiable {
     let hiveId: String
     let userId: String
     let name: String
-    let photoUrl: String
+    var photoUrl: String
     let estDate: Date
     let framesNumber: Int
     let healthState: String

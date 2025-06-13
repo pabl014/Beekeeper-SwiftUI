@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 @MainActor
 final class HomeViewModel: ObservableObject {
@@ -26,7 +27,6 @@ final class HomeViewModel: ObservableObject {
         self.authService = authService
         self.hivesService = hivesService
     }
-    
     
     func loadHives() async {
         guard let userId = currentUserId else {
@@ -57,7 +57,8 @@ final class HomeViewModel: ObservableObject {
         lastFeedAmount: Double,
         address: String,
         latitude: String,
-        longitude: String
+        longitude: String,
+        image: UIImage
     ) async throws {
         guard let userId = currentUserId else {
             errorMessage = "User not authenticated"
@@ -84,7 +85,8 @@ final class HomeViewModel: ObservableObject {
             longitude: lng
         )
         
-        let _ = try await hivesService.addHive(newHive)
+        try await hivesService.addHive(newHive, image: image)
+//        let _ = try await hivesService.addHive(newHive)
         
         // Reload hives to reflect the new addition
         await loadHives()

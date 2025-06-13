@@ -28,6 +28,8 @@ struct AddHiveView: View {
     @State private var isSaving = false
     @State private var errorMessage: String?
     
+    @State private var selectedImage: UIImage?
+    
     private var combinedErrorMessage: String? {
         errorMessage ?? locationManager.errorMessage
     }
@@ -35,6 +37,14 @@ struct AddHiveView: View {
     var body: some View {
         NavigationStack {
             Form {
+                
+                Section(header: Text("Photo")) {
+                    ImagePickerView(selectedImage: $selectedImage)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .listRowBackground(Color.clear)
+                }
+                
+                
                 Section(header: Text("Hive Info")) {
                     TextField("Name", text: $name)
                     
@@ -150,6 +160,11 @@ struct AddHiveView: View {
         isSaving = true
         
         Task {
+            
+            guard let image = self.selectedImage else {
+                return
+            }
+            
             do {
                 try await viewModel.addHive(
                     name: name.trimmingCharacters(in: .whitespacesAndNewlines),
@@ -161,7 +176,8 @@ struct AddHiveView: View {
                     lastFeedAmount: lastFeedAmount,
                     address: address,
                     latitude: latitude,
-                    longitude: longitude
+                    longitude: longitude,
+                    image: image
                 )
                 
             } catch {

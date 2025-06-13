@@ -25,6 +25,13 @@ final class HivesService: HivesServiceProtocol {
         return decoder
     }()
     
+    // dependencies
+    private let storageService: StorageServiceProtocol
+    
+    init(storageService: StorageServiceProtocol = StorageService()) {
+        self.storageService = storageService
+    }
+    
     func fetchHives(for userId: String) async throws -> [Hive] {
         let snapshot = try await db.collection(hivesCollection)
             .whereField("user_id", isEqualTo: userId)
@@ -44,7 +51,7 @@ final class HivesService: HivesServiceProtocol {
         return try document.data(as: Hive.self, decoder: decoder)
     }
     
-    func addHive(_ hive: Hive) async throws {
+    func addHive(_ hive: Hive, image: UIImage) async throws {
         let documentRef = db.collection(hivesCollection).document()
         
         var hiveWithId = hive
@@ -53,7 +60,7 @@ final class HivesService: HivesServiceProtocol {
             hiveId: documentRef.documentID,
             userId: hive.userId,
             name: hive.name,
-            photoUrl: hive.photoUrl,
+            photoUrl: "", // initially empty
             estDate: hive.estDate,
             framesNumber: hive.framesNumber,
             healthState: hive.healthState,
@@ -65,7 +72,13 @@ final class HivesService: HivesServiceProtocol {
             longitude: hive.longitude
         )
         
-        try documentRef.setData(from: hiveWithId, encoder: encoder)
+        do {
+            let photoUrl = try await storageService.uploadHiveImage(image, hiveId: documentRef.documentID) // Upload image
+            hiveWithId.photoUrl = photoUrl // Set the URL
+            try documentRef.setData(from: hiveWithId, encoder: encoder)
+        } catch {
+            throw error
+        }
     }
     
     func editHive(_ hive: Hive) async throws {
@@ -75,9 +88,13 @@ final class HivesService: HivesServiceProtocol {
     }
     
     func deleteHive(hiveId: String) async throws {
-        try await db.collection(hivesCollection)
-            .document(hiveId)
-            .delete()
+        let hive = try await getHive(hiveId: hiveId)
+
+        try await db.collection(hivesCollection).document(hiveId).delete()
+
+        if !hive.photoUrl.isEmpty {
+            try await storageService.deleteHiveImage(at: hive.photoUrl)
+        }
     }
 }
 
