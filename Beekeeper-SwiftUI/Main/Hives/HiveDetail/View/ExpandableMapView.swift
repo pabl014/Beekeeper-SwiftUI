@@ -58,7 +58,7 @@ struct MapViewForOneHive: View {
     var body: some View {
         Map(position: $cameraPosition) {
             Marker(
-                "\("Location")",
+                "\("Your hive")",
                 coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             )
         }
